@@ -19,6 +19,12 @@ function props() {
   return PropertiesService.getScriptProperties();
 }
 
+// The Merchant ID is not secret (the Merchant Secret is, and only lives in the script property PAYHERE_SECRET).
+// Set the script property PAYHERE_MERCHANT_ID to override this default, for example with the live ID.
+function merchantId_() {
+  return props().getProperty('PAYHERE_MERCHANT_ID') || '1239144';
+}
+
 function doPost(e) {
   try {
     // PayHere reports the result of a card payment as a form post
@@ -44,7 +50,10 @@ function doPost(e) {
 // The customer's "payment return" page asks for the status of its order (nothing personal is returned)
 function doGet(e) {
   const number = e && e.parameter && e.parameter.order;
-  if (!number) return reply({ ok: true, service: 'kanya-orders' });
+  if (!number) {
+    getSheet(); // makes sure the orders sheet exists (the first visit creates it in the owner's Drive)
+    return reply({ ok: true, service: 'kanya-orders' });
+  }
   const sheet = getSheet();
   const row = findOrderRow(sheet, String(number));
   return reply({ ok: true, status: row ? String(sheet.getRange(row, STATUS_COL).getValue()) : 'Unknown' });
@@ -121,7 +130,7 @@ function md5Hex(value) {
 
 // Step 1: the customer chose card. Check the amount, save the order as "Awaiting payment", sign the payment.
 function startCardPayment(order) {
-  const merchantId = props().getProperty('PAYHERE_MERCHANT_ID');
+  const merchantId = merchantId_();
   const secret = props().getProperty('PAYHERE_SECRET');
   if (!merchantId || !secret) return reply({ ok: false, error: 'Card payments are not set up yet' });
   if (!order.customer.email) return reply({ ok: false, error: 'An email address is needed for card payments' });
@@ -138,7 +147,7 @@ function startCardPayment(order) {
 // Step 2: PayHere tells us the result (server to server). Verify its signature before trusting it.
 function handlePayhereNotify(p) {
   const out = function (t) { return ContentService.createTextOutput(t); };
-  const merchantId = props().getProperty('PAYHERE_MERCHANT_ID');
+  const merchantId = merchantId_();
   const secret = props().getProperty('PAYHERE_SECRET');
   if (!merchantId || !secret || p.merchant_id !== merchantId) return out('ignored');
 
@@ -212,7 +221,7 @@ function findOrderRow(sheet, orderNumber) {
 
 // Full order details are kept in a hidden tab so the Word slip and emails can be made when PayHere confirms.
 function getDataSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   let sheet = ss.getSheetByName(DATA_SHEET);
   if (!sheet) {
     sheet = ss.insertSheet(DATA_SHEET);
@@ -270,8 +279,19 @@ function verifyPrices(order) {
 
 // ---- sheet helpers -----------------------------------------------------------------------------
 
+// Uses the sheet this script is attached to; if there is none (standalone script) it creates "KANYA Orders" once.
+function getSpreadsheet_() {
+  const savedId = props().getProperty('SHEET_ID');
+  if (savedId) return SpreadsheetApp.openById(savedId);
+  const attached = SpreadsheetApp.getActiveSpreadsheet();
+  if (attached) return attached;
+  const created = SpreadsheetApp.create('KANYA Orders');
+  props().setProperty('SHEET_ID', created.getId());
+  return created;
+}
+
 function getSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet_();
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) sheet = ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
