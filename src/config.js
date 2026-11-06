@@ -23,7 +23,7 @@ export const store = {
 
   // PayHere online card payments (see order-backend/README.md). The Merchant SECRET is never put here:
   // it lives only in the Google script's private settings. Turn "enabled" on once the steps in the README are done.
-  payhere: { enabled: false, sandbox: true, merchantId: "1239144" },
+  payhere: { enabled: true, sandbox: true, merchantId: "1239144" },
 
   shipping: { fee: 350, freeOver: 5000 },
 };
