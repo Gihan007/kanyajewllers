@@ -134,7 +134,15 @@ function startCardPayment(order) {
   const secret = props().getProperty('PAYHERE_SECRET');
   if (!merchantId || !secret) return reply({ ok: false, error: 'Card payments are not set up yet' });
   if (!order.customer.email) return reply({ ok: false, error: 'An email address is needed for card payments' });
-  if (verifyPrices(order) !== true) return reply({ ok: false, error: 'The price check failed. Please reload the page and try again.' });
+  const priceCheck = verifyPrices(order);
+  if (priceCheck !== true) {
+    return reply({
+      ok: false,
+      error: priceCheck === null
+        ? 'Could not check the prices (' + priceListError + ')'
+        : 'The prices in the bag do not match the price list. Please reload the page and try again.',
+    });
+  }
 
   appendOrderRow(order, 'Awaiting payment', '');
   saveOrderData(order);
@@ -245,12 +253,17 @@ function loadOrderData(orderNumber) {
 // ---- price check -------------------------------------------------------------------------------
 
 // The website publishes its real prices in /prices.json; every order is compared with that list.
+let priceListError = '';
+
 function getPriceList() {
   const cache = CacheService.getScriptCache();
   const cached = cache.get('prices');
   if (cached) return JSON.parse(cached);
   const res = UrlFetchApp.fetch(SITE_URL + '/prices.json', { muteHttpExceptions: true });
-  if (res.getResponseCode() !== 200) return null;
+  if (res.getResponseCode() !== 200) {
+    priceListError = 'price list returned HTTP ' + res.getResponseCode();
+    return null;
+  }
   const data = JSON.parse(res.getContentText());
   cache.put('prices', JSON.stringify(data), 300);
   return data;
@@ -262,6 +275,8 @@ function verifyPrices(order) {
   try {
     list = getPriceList();
   } catch (err) {
+    priceListError = String(err);
+    console.error('Price list failed: ' + err);
     return null;
   }
   if (!list) return null;
