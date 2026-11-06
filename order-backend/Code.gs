@@ -101,13 +101,15 @@ function sendOrderEmails(order, slip, paid) {
     'Payment: ' + order.payment + '\n\n' + itemsText(order) + '\n\n' +
     'Subtotal: Rs. ' + order.subtotal + '\nShipping: Rs. ' + order.shipping + '\nTotal: Rs. ' + order.total +
     (c.notes ? '\n\nNotes: ' + c.notes : '');
-  const attachments = slip ? [slip.blob] : [];
+  // you get the Word slip and the PDF; the customer gets the PDF (it opens on any phone)
+  const ownerAttachments = slip ? [slip.blob].concat(slip.pdf ? [slip.pdf] : []) : [];
+  const customerAttachments = slip ? (slip.pdf ? [slip.pdf] : [slip.blob]) : [];
 
   MailApp.sendEmail({
     to: Session.getEffectiveUser().getEmail(),
     subject: (paid ? 'PAID - ' : '') + 'New KANYA order ' + order.orderNumber + ' - Rs. ' + order.total,
-    body: summary + (slip ? '\n\nWord order slip attached. Saved in Drive: ' + slip.url : ''),
-    attachments: attachments,
+    body: summary + (slip ? '\n\nOrder slip attached (Word and PDF). Saved in Drive: ' + slip.url : ''),
+    attachments: ownerAttachments,
   });
 
   if (c.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c.email)) {
@@ -115,8 +117,8 @@ function sendOrderEmails(order, slip, paid) {
       to: c.email,
       subject: (paid ? 'Payment received for your KANYA order ' : 'We received your KANYA order ') + order.orderNumber,
       body: 'Hi ' + c.name + ',\n\nThank you for your order. This is what we received:\n\n' + summary +
-        '\n\nWe will confirm the delivery with you on WhatsApp shortly.\n\nKANYA',
-      attachments: attachments,
+        '\n\nYour order slip is attached as a PDF. We will confirm the delivery with you on WhatsApp shortly.\n\nKANYA',
+      attachments: customerAttachments,
     });
   }
 }
@@ -461,10 +463,18 @@ function createOrderSlip(order, status) {
   }
   const blob = response.getBlob().setName('KANYA-order-' + order.orderNumber + '.docx');
 
+  let pdf = null;
+  try {
+    pdf = DriveApp.getFileById(doc.getId()).getAs(MimeType.PDF).setName('KANYA-order-' + order.orderNumber + '.pdf');
+  } catch (err) {
+    console.error('PDF failed: ' + err); // the Word slip is still produced
+  }
+
   const folders = DriveApp.getFoldersByName(SLIP_FOLDER);
   const folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(SLIP_FOLDER);
   const file = folder.createFile(blob);
+  if (pdf) folder.createFile(pdf);
   DriveApp.getFileById(doc.getId()).setTrashed(true); // the temporary Google Doc is no longer needed
 
-  return { blob: blob, url: file.getUrl() };
+  return { blob: blob, pdf: pdf, url: file.getUrl() };
 }

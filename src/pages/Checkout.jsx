@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Lock, MessageCircle, Check } from "lucide-react";
+import { Lock, MessageCircle, Check, FileDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { formatPrice, getProductById } from "../data/products";
 import { store, bankConfigured, cardEnabled, ordersOpen } from "../config";
+import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
 
 const inputClass =
   "w-full rounded-lg border border-ink/16 bg-panel px-4 py-3 text-sm text-pearl placeholder:text-mist/50 outline-none focus:border-gold";
@@ -98,6 +99,15 @@ function submitToPayHere(order, data) {
 
 function Confirmation({ order }) {
   const bank = order.payment === "Bank transfer";
+  const [pdfBusy, setPdfBusy] = useState(false);
+  const downloadPdf = async () => {
+    setPdfBusy(true);
+    try {
+      await downloadOrderSlipPdf(order);
+    } finally {
+      setPdfBusy(false);
+    }
+  };
   return (
     <div className="bg-aurora min-h-[70vh]">
       <div className="mx-auto max-w-2xl px-6 py-20 text-center lg:px-10">
@@ -122,6 +132,14 @@ function Confirmation({ order }) {
           >
             <MessageCircle size={18} /> Send order on WhatsApp
           </a>
+          <button
+            type="button"
+            onClick={downloadPdf}
+            disabled={pdfBusy}
+            className="btn-outline-dark mt-3 flex w-full items-center justify-center gap-2 py-3.5 text-sm uppercase tracking-wider disabled:opacity-60"
+          >
+            <FileDown size={18} /> {pdfBusy ? "Preparing PDF…" : "Download order slip (PDF)"}
+          </button>
         </div>
 
         {bank && (

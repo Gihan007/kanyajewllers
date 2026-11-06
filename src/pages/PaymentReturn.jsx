@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { MessageCircle, Check, Loader2, X } from "lucide-react";
+import { MessageCircle, Check, Loader2, X, FileDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { store } from "../config";
+import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
 
 const waLink = (orderNumber) =>
   `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, I just paid for order ${orderNumber}.`)}`;
@@ -12,7 +13,25 @@ export default function PaymentReturn() {
   const orderNumber = params.get("order") || "";
   const { clearCart } = useCart();
   const [status, setStatus] = useState("checking");
+  const [pdfBusy, setPdfBusy] = useState(false);
   const tries = useRef(0);
+
+  // the order was saved in this browser tab before the customer went to PayHere
+  let savedOrder = null;
+  try {
+    const raw = JSON.parse(sessionStorage.getItem("kanya-last-order"));
+    if (raw && raw.orderNumber === orderNumber) savedOrder = { ...raw, payment: "Online card payment (paid)" };
+  } catch {
+    // no saved order
+  }
+  const downloadPdf = async () => {
+    setPdfBusy(true);
+    try {
+      await downloadOrderSlipPdf(savedOrder);
+    } finally {
+      setPdfBusy(false);
+    }
+  };
 
   // The customer finished at PayHere, so the bag can be emptied.
   useEffect(() => {
@@ -58,6 +77,16 @@ export default function PaymentReturn() {
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold">{view.icon}</span>
         <h1 className="mt-6 font-display text-4xl text-pearl">{view.title}</h1>
         <p className="mt-4 text-mist">{view.body}</p>
+        {savedOrder && status === "paid" && (
+          <button
+            type="button"
+            onClick={downloadPdf}
+            disabled={pdfBusy}
+            className="btn-outline-dark mt-6 inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm uppercase tracking-wider disabled:opacity-60"
+          >
+            <FileDown size={18} /> {pdfBusy ? "Preparing PDF…" : "Download order slip (PDF)"}
+          </button>
+        )}
         {orderNumber && status !== "failed" && (
           <a
             href={waLink(orderNumber)}
