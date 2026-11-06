@@ -1,6 +1,12 @@
-# Order backend (Google Sheet + email)
+# Order backend (Google Sheet + Word slip + email)
 
-Every order placed on the site is saved as a row in a Google Sheet and emailed to you.
+For every order placed on the site this script:
+
+1. saves a row in your Google Sheet (tab "Orders"),
+2. creates a Word order slip (`KANYA-order-<number>.docx`) with the customer's details and the order details,
+   and saves it in your Google Drive folder **KANYA Order Slips** (the sheet row links to it),
+3. emails you the order with the Word slip attached (and sends the customer a copy if they gave an email).
+
 Orders also open a WhatsApp message, so you still get the order if the sheet is ever down.
 
 ## One-time setup (about 5 minutes)
@@ -12,7 +18,9 @@ Orders also open a WhatsApp message, so you still get the order if the sheet is 
    - Execute as: **Me**
    - Who has access: **Anyone**
 5. Click **Deploy** and approve the permissions Google asks for
-   (it needs to edit your sheet and send email as you).
+   (it needs to edit your sheet, create the Word slips in your Drive, and send email as you).
+   Google shows an "unverified app" warning because you wrote the script yourself: click
+   **Advanced → Go to (project name)** and allow.
 6. Copy the **Web app URL** (it ends in `/exec`).
 7. Put that URL in `src/config.js` as `orderEndpoint`, and push to `main`.
 
