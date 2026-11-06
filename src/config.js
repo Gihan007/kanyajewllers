@@ -1,0 +1,31 @@
+// Store settings. Fill in the blanks below, then push to main to publish.
+export const store = {
+  name: "KANYÃ",
+
+  // WhatsApp number that receives every order, digits only with country code (Sri Lanka = 94, drop the leading 0).
+  // Example: 0771234567 -> "94771234567". Leave empty and checkout stays closed.
+  whatsappNumber: "",
+
+  // Google Apps Script web app URL that saves each order to your Google Sheet (see order-backend/README.md).
+  // Optional: with it empty, orders still arrive on WhatsApp but are not saved to the sheet.
+  orderEndpoint: "",
+
+  // Random text that must match SITE_KEY in order-backend/Code.gs. It only filters casual spam.
+  siteKey: "kj-bae1ee88b9aa61b633125122",
+
+  // Shown to the customer after they choose "Bank transfer". Leave bankName empty to hide that option.
+  bank: {
+    bankName: "",
+    accountName: "",
+    accountNumber: "",
+    branch: "",
+  },
+
+  // Turn on only after a payment gateway (for example PayHere) has been connected.
+  cardPayments: { enabled: false },
+
+  shipping: { fee: 350, freeOver: 5000 },
+};
+
+export const bankConfigured = Boolean(store.bank.bankName && store.bank.accountNumber);
+export const ordersOpen = Boolean(store.whatsappNumber) && (bankConfigured || store.cardPayments.enabled);

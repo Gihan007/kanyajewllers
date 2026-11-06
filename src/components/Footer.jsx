@@ -83,7 +83,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-ink/10 px-6 py-6 text-center text-xs text-mist/70">
-        © {new Date().getFullYear()} KANYÃ. All rights reserved. Placeholder content for demo purposes.
+        © {new Date().getFullYear()} KANYÃ. All rights reserved.
       </div>
     </footer>
   );

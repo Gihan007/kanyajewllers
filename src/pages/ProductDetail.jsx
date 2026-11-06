@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Minus, Plus, ShieldCheck, Truck, Undo2 } from "lucide-react";
 import { getProductById, products, formatPrice } from "../data/products";
+import { store } from "../config";
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
 
@@ -96,7 +97,7 @@ export default function ProductDetail() {
             </div>
 
             <div className="mt-10 space-y-3 border-t border-ink/16 pt-6 text-sm text-mist">
-              <div className="flex items-center gap-3"><Truck size={16} className="text-gold" /> Free shipping on orders over Rs. 5,000</div>
+              <div className="flex items-center gap-3"><Truck size={16} className="text-gold" /> Free shipping on orders over {formatPrice(store.shipping.freeOver)}</div>
               <div className="flex items-center gap-3"><Undo2 size={16} className="text-gold" /> 30-day returns</div>
               <div className="flex items-center gap-3"><ShieldCheck size={16} className="text-gold" /> Lifetime warranty &amp; care</div>
             </div>
