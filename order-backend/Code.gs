@@ -15,6 +15,18 @@ const HEADERS = [
   'Postal code', 'Payment', 'Items', 'Subtotal', 'Shipping', 'Total', 'Notes', 'Order slip (Word)',
 ];
 
+// Run this ONCE from the editor (choose authorizeAll, then Run). It touches every Google service the script uses, so
+// Google shows one permission screen for all of them. Tick every box, then Allow.
+function authorizeAll() {
+  getSheet();
+  DriveApp.getRootFolder();
+  const doc = DocumentApp.create('KANYA permission test');
+  DriveApp.getFileById(doc.getId()).setTrashed(true);
+  UrlFetchApp.fetch(SITE_URL + '/prices.json');
+  MailApp.getRemainingDailyQuota();
+  console.log('All permissions are granted.');
+}
+
 function props() {
   return PropertiesService.getScriptProperties();
 }
