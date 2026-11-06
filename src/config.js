@@ -4,7 +4,7 @@ export const store = {
 
   // WhatsApp number that receives every order, digits only with country code (Sri Lanka = 94, drop the leading 0).
   // Example: 0771234567 -> "94771234567". Leave empty and checkout stays closed.
-  whatsappNumber: "",
+  whatsappNumber: "94721102027",
 
   // Google Apps Script web app URL that saves each order to your Google Sheet (see order-backend/README.md).
   // Optional: with it empty, orders still arrive on WhatsApp but are not saved to the sheet.
@@ -15,10 +15,10 @@ export const store = {
 
   // Shown to the customer after they choose "Bank transfer". Leave bankName empty to hide that option.
   bank: {
-    bankName: "",
-    accountName: "",
-    accountNumber: "",
-    branch: "",
+    bankName: "People's Bank",
+    accountName: "J.A.V Sithumini",
+    accountNumber: "196 2 001 5 0032395",
+    branch: "Kaduwela",
   },
 
   // Turn on only after a payment gateway (for example PayHere) has been connected.
