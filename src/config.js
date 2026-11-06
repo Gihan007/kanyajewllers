@@ -8,7 +8,7 @@ export const store = {
 
   // Google Apps Script web app URL that saves each order to your Google Sheet (see order-backend/README.md).
   // Optional: with it empty, orders still arrive on WhatsApp but are not saved to the sheet.
-  orderEndpoint: "",
+  orderEndpoint: "https://script.google.com/macros/s/AKfycbyoZM6ItGQmT9kLIv4sjHkaAhLTjf2Zgp_oK2oUUGVuA89wtR8kWrAofbfRGIesiS1V/exec",
 
   // Random text that must match SITE_KEY in order-backend/Code.gs. It only filters casual spam.
   siteKey: "kj-bae1ee88b9aa61b633125122",
@@ -23,7 +23,7 @@ export const store = {
 
   // PayHere online card payments (see order-backend/README.md). The Merchant SECRET is never put here:
   // it lives only in the Google script's private settings. Turn "enabled" on once the steps in the README are done.
-  payhere: { enabled: true, sandbox: true, merchantId: "1239144" },
+  payhere: { enabled: false, sandbox: true, merchantId: "1239144" },
 
   shipping: { fee: 350, freeOver: 5000 },
 };
