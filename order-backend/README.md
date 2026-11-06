@@ -31,7 +31,38 @@ The URL stays the same.
 
 ## Notes
 
-- Prices are calculated in the customer's browser, so always check the total in the sheet or WhatsApp
-  against your price list before you pack an order.
+- Prices are calculated in the customer's browser, but the script compares every order with the real price
+  list and marks the row "Check prices" if they differ. Still glance at the total before you pack an order.
 - The `SITE_KEY` in `Code.gs` and `siteKey` in `src/config.js` must be identical. It only filters casual spam.
 - Free Google accounts can send about 100 emails a day through Apps Script.
+
+## Online card payments (PayHere)
+
+Card payments are built in but switched off until you have a PayHere account. The flow: the customer picks
+"Online card payment" and presses Place Order, this script checks the prices and signs the payment, the customer pays
+on PayHere's own secure page, and PayHere tells this script the result. Paid orders then get the Word slip and emails.
+The card number is typed on PayHere's page only, never on your site.
+
+1. Sign up as a merchant at https://www.payhere.lk (business details and a bank account for payouts; approval can take a few days).
+   Meanwhile create a free **sandbox** account at https://sandbox.payhere.lk to test with fake cards.
+2. In PayHere: **Settings → Domains & Credentials → Add domain** `kanyajewellers.com`. PayHere then shows the
+   **Merchant ID** and the **Merchant Secret** for that domain (the sandbox and the live account each have their own pair).
+3. In this Apps Script project: **Project Settings (gear icon) → Script properties → Add script property** twice:
+   - `PAYHERE_MERCHANT_ID` = the Merchant ID
+   - `PAYHERE_SECRET` = the Merchant Secret (keep it private, it is never put on the website)
+4. **Deploy → Manage deployments → pencil icon → Version: New version → Deploy** (the URL stays the same).
+5. In `src/config.js` set `orderEndpoint` to the script URL and `payhere` to
+   `{ enabled: true, sandbox: true, merchantId: "<your sandbox Merchant ID>" }`, then push to `main`.
+6. Place a test order with PayHere's sandbox test cards. The sheet row should go
+   "Awaiting payment" -> "Paid", and you should get the email with the Word slip.
+7. To go live: use the live Merchant ID and Secret in step 3, set `sandbox: false` and the live `merchantId` in step 5, push.
+
+Order statuses you will see in the sheet: New, Awaiting payment, Paid, Payment pending, Payment failed, Cancelled,
+Charged back, Check prices (the order's prices did not match the real price list), Check payment amount.
+
+Things to know:
+- PayHere reports results to the script's web address. If a status ever stays on "Awaiting payment" after a customer
+  says they paid, check the payment in your PayHere dashboard and change the status by hand.
+- The site publishes its price list at `/prices.json` on every update; the script compares every order with it.
+- Free Google accounts can send about 100 emails a day through Apps Script.
+

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Lock, MessageCircle, Check } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { formatPrice, getProductById } from "../data/products";
-import { store, bankConfigured, ordersOpen } from "../config";
+import { store, bankConfigured, cardEnabled, ordersOpen } from "../config";
 
 const inputClass =
   "w-full rounded-lg border border-ink/16 bg-panel px-4 py-3 text-sm text-pearl placeholder:text-mist/50 outline-none focus:border-gold";
@@ -48,6 +48,52 @@ function sendToSheet(order) {
   }).catch(() => {
     // WhatsApp is the backup channel if the sheet cannot be reached
   });
+}
+
+// Card payments: the Google script checks the prices and signs the payment, then the customer is sent to PayHere.
+async function startCardPayment(order) {
+  const res = await fetch(store.orderEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({ ...order, action: "payhere-start" }),
+  });
+  const data = await res.json();
+  if (!data.ok) throw new Error(data.error || "Could not start the payment");
+  return data;
+}
+
+function submitToPayHere(order, data) {
+  const [firstName, ...rest] = order.customer.name.split(" ");
+  const fields = {
+    merchant_id: data.merchantId,
+    return_url: `${window.location.origin}/payment-return?order=${encodeURIComponent(order.orderNumber)}`,
+    cancel_url: `${window.location.origin}/checkout`,
+    notify_url: store.orderEndpoint,
+    order_id: data.orderId,
+    items: `KANYA order ${order.orderNumber}`,
+    currency: data.currency,
+    amount: data.amount,
+    first_name: firstName,
+    last_name: rest.join(" ") || "-",
+    email: order.customer.email,
+    phone: order.customer.phone,
+    address: order.customer.address,
+    city: order.customer.city,
+    country: "Sri Lanka",
+    hash: data.hash,
+  };
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = store.payhere.sandbox ? "https://sandbox.payhere.lk/pay/checkout" : "https://www.payhere.lk/pay/checkout";
+  Object.entries(fields).forEach(([name, value]) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+  });
+  document.body.appendChild(form);
+  form.submit();
 }
 
 function Confirmation({ order }) {
@@ -116,6 +162,7 @@ export default function Checkout() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", city: "", postalCode: "", notes: "", website: "" });
   const [payment, setPayment] = useState(bankConfigured ? "Bank transfer" : "Online card payment");
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [placed, setPlaced] = useState(() => {
     try {
       return JSON.parse(sessionStorage.getItem(LAST_ORDER_KEY));
@@ -135,9 +182,10 @@ export default function Checkout() {
 
   const set = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (submitting || !ordersOpen) return;
+    setError("");
     setSubmitting(true);
 
     if (form.website) {
@@ -166,6 +214,22 @@ export default function Checkout() {
       shipping,
       total,
     };
+
+    if (payment === "Online card payment") {
+      try {
+        const data = await startCardPayment(order);
+        try {
+          sessionStorage.setItem(LAST_ORDER_KEY, JSON.stringify(order));
+        } catch {
+          // ignore storage errors
+        }
+        submitToPayHere(order, data); // leaves the site; the cart stays until the customer comes back paid
+      } catch {
+        setError("We could not start the card payment. Please try again, or choose bank transfer.");
+        setSubmitting(false);
+      }
+      return;
+    }
 
     sendToSheet(order);
     window.open(whatsappUrl(order), "_blank");
@@ -221,7 +285,15 @@ export default function Checkout() {
                 onChange={set("phone")}
                 className={inputClass}
               />
-              <input type="email" placeholder="Email (optional)" autoComplete="email" value={form.email} onChange={set("email")} className={inputClass} />
+              <input
+                type="email"
+                required={payment === "Online card payment"}
+                placeholder={payment === "Online card payment" ? "Email (needed for card payment)" : "Email (optional)"}
+                autoComplete="email"
+                value={form.email}
+                onChange={set("email")}
+                className={inputClass}
+              />
             </div>
           </section>
 
@@ -264,17 +336,19 @@ export default function Checkout() {
               </label>
               <label
                 className={`flex items-start gap-3 rounded-xl border p-4 ${
-                  store.cardPayments.enabled ? "cursor-pointer" : "opacity-50"
+                  cardEnabled ? "cursor-pointer" : "opacity-50"
                 } ${payment === "Online card payment" ? "border-gold bg-gold/5" : "border-ink/16"}`}
               >
-                <input type="radio" name="payment" disabled={!store.cardPayments.enabled} checked={payment === "Online card payment"} onChange={() => setPayment("Online card payment")} className="mt-1 accent-[var(--color-gold)]" />
+                <input type="radio" name="payment" disabled={!cardEnabled} checked={payment === "Online card payment"} onChange={() => setPayment("Online card payment")} className="mt-1 accent-[var(--color-gold)]" />
                 <span>
                   <span className="block text-sm text-pearl">Online card payment</span>
-                  <span className="block text-xs text-mist">{store.cardPayments.enabled ? "Pay securely by card." : "Coming soon"}</span>
+                  <span className="block text-xs text-mist">{cardEnabled ? "Pay securely by card." : "Coming soon"}</span>
                 </span>
               </label>
             </div>
           </section>
+
+          {error && <p className="rounded-lg border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
 
           <button
             type="submit"
@@ -284,7 +358,9 @@ export default function Checkout() {
             {submitting ? "Placing Order…" : `Place Order — ${formatPrice(total)}`}
           </button>
           <p className="-mt-6 text-center text-xs text-mist">
-            After you place the order, WhatsApp opens with your order details. Press Send to confirm it.
+            {payment === "Online card payment"
+              ? "You will be taken to PayHere to pay securely by card."
+              : "After you place the order, WhatsApp opens with your order details. Press Send to confirm it."}
           </p>
         </form>
 

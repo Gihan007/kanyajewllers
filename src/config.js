@@ -21,11 +21,13 @@ export const store = {
     branch: "Kaduwela",
   },
 
-  // Turn on only after a payment gateway (for example PayHere) has been connected.
-  cardPayments: { enabled: false },
+  // PayHere online card payments (see order-backend/README.md). The Merchant SECRET is never put here:
+  // it lives only in the Google script's private settings. Turn "enabled" on once the steps in the README are done.
+  payhere: { enabled: false, sandbox: true, merchantId: "" },
 
   shipping: { fee: 350, freeOver: 5000 },
 };
 
 export const bankConfigured = Boolean(store.bank.bankName && store.bank.accountNumber);
-export const ordersOpen = Boolean(store.whatsappNumber) && (bankConfigured || store.cardPayments.enabled);
+export const cardEnabled = store.payhere.enabled && Boolean(store.payhere.merchantId) && Boolean(store.orderEndpoint);
+export const ordersOpen = Boolean(store.whatsappNumber) && (bankConfigured || cardEnabled);
