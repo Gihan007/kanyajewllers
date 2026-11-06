@@ -5,16 +5,61 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="KANYÃ — fine jewellery crafted for the modern era." />
+    <meta name="theme-color" content="#faf6ee" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the page, so a slow connection never leaves a blank screen -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <style>
+      html, body { margin: 0; background: #faf6ee; }
+      #boot { display: flex; min-height: 100vh; align-items: center; justify-content: center; flex-direction: column;
+        font-family: Georgia, 'Times New Roman', serif; color: #2f4237; letter-spacing: 0.3em; font-size: 26px; text-align: center; padding: 24px; }
+      #boot small { display: block; margin-top: 18px; font: 13px/1.5 system-ui, sans-serif; letter-spacing: 0; color: #87806f; }
+      #boot button { margin-top: 18px; padding: 10px 24px; border: 1px solid #2f4237; background: transparent; color: #2f4237; cursor: pointer; font: 13px system-ui, sans-serif; }
+    </style>
     <title>KANYÃ — Fine Jewellery</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div id="boot">K A N Y Ã</div></div>
+    <noscript>
+      <p style="font-family:system-ui,sans-serif;text-align:center;padding:24px;color:#2f4237">
+        Please turn on JavaScript to browse KANYÃ.
+      </p>
+    </noscript>
+    <script>
+      // If the page is still blank because a file failed to load (for example an old saved copy of the page after an
+      // update), reload once to get the new version; otherwise show a readable message instead of a white screen.
+      window.addEventListener('error', function (e) {
+        var root = document.getElementById('root');
+        if (!root) return;
+        var stillBlank = root.children.length === 0 || (root.firstElementChild && root.firstElementChild.id === 'boot');
+        if (!stillBlank) return;
+        var target = e.target || {};
+        var failedFile = target.src || target.href || '';
+        try {
+          if (failedFile.indexOf('/assets/') !== -1 && !sessionStorage.getItem('kanya-reloaded')) {
+            sessionStorage.setItem('kanya-reloaded', '1');
+            location.reload();
+            return;
+          }
+        } catch (err) {}
+        root.innerHTML =
+          '<div id="boot">K A N Y Ã<small>Sorry, the page could not load.<br>' +
+          (failedFile ? 'Missing file: ' + failedFile : 'Error: ' + (e.message || 'unknown')) +
+          '</small><button onclick="location.reload()">Reload</button></div>';
+      }, true);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
