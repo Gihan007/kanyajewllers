@@ -8,7 +8,7 @@ export const store = {
 
   // Google Apps Script web app URL that saves each order to your Google Sheet (see order-backend/README.md).
   // Optional: with it empty, orders still arrive on WhatsApp but are not saved to the sheet.
-  orderEndpoint: "https://script.google.com/macros/s/AKfycbxoPt7nFgEmZSpv0Ztexsgq2IwSYgmMvShNQSDv33a0-pPxC2qgGxZSi1BhrvIosAjR/exec",
+  orderEndpoint: "https://script.google.com/macros/s/AKfycbzUhbkUsOcfN3CwPq_ZnLq-bT8mYyH6fGJ0MeF3ThNuiwLtAqFpdireHNPj9enyEBL8/exec",
 
   // Random text that must match SITE_KEY in order-backend/Code.gs. It only filters casual spam.
   siteKey: "kj-bae1ee88b9aa61b633125122",
