@@ -16,7 +16,7 @@ const banners = [
     title: "Pure Silver with Gemstones",
     to: "/shop",
     cta: "Explore",
-    image: products.find((p) => p.id === "kan-002")?.image,
+    image: products.find((p) => p.id === "kan-011")?.image,
   },
   {
     label: "Made for you",

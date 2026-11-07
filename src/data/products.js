@@ -13,40 +13,6 @@ const img = (id, w = 800, h = 1000) =>
 
 export const products = [
   {
-    "id": "kan-001",
-    "name": "Mehroon Ruby Oxidised Ring",
-    "category": "Rings",
-    "price": 4300,
-    "material": "Oxidised Silver Finish, Glass Stone",
-    "image": "/products/kan-001-1.jpg",
-    "gallery": [
-      "/products/kan-001-1.jpg",
-      "/products/kan-001-2.jpg",
-      "/products/kan-001-3.jpg"
-    ],
-    "description": "A statement oxidised ring with a deep ruby-red centre stone and fine filigree edging.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-002",
-    "name": "Turquoise Sun Filigree Ring",
-    "category": "Rings",
-    "price": 4000,
-    "material": "Oxidised Silver Finish, Turquoise-colour Stone",
-    "image": "/products/kan-002-1.jpg",
-    "gallery": [
-      "/products/kan-002-1.jpg",
-      "/products/kan-002-2.jpg",
-      "/products/kan-002-3.jpg"
-    ],
-    "description": "Turquoise set in a sunburst of oxidised filigree: bold, bohemian and easy to style.",
-    "featured": true,
-    "tags": [
-      "featured"
-    ]
-  },
-  {
     "id": "kan-003",
     "name": "Trio Gold Stacking Rings",
     "category": "Rings",
