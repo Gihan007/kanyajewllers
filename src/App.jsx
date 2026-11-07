@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useLayoutEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,9 +13,19 @@ import Contact from "./pages/Contact";
 import BuildYourStory from "./pages/BuildYourStory";
 import Gifting from "./pages/Gifting";
 
+// Every new page opens at the top instead of keeping the previous page's scroll position.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-sand">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <Routes>
