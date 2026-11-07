@@ -6,21 +6,24 @@ import { products } from "../data/products";
 const banners = [
   {
     label: "Collection",
-    title: "Stacking Rings",
-    to: "/shop?category=Rings",
-    image: products.find((p) => p.category === "Rings")?.image,
+    title: "Anti-Tarnish Stainless Steel",
+    to: "/shop?style=tarnish",
+    cta: "Shop Now",
+    image: products.find((p) => p.id === "kan-050")?.image,
   },
   {
     label: "Collection",
-    title: "Layered Necklaces",
-    to: "/shop?category=Necklaces",
-    image: products.find((p) => p.category === "Necklaces")?.image,
+    title: "Pure Silver with Gemstones",
+    to: "/shop",
+    cta: "Explore",
+    image: products.find((p) => p.id === "kan-002")?.image,
   },
   {
-    label: "Collection",
-    title: "Studs & Statement Earrings",
-    to: "/shop?category=Earrings",
-    image: products.find((p) => p.category === "Earrings")?.image,
+    label: "Made for you",
+    title: "Custom Jewellery",
+    to: "/contact",
+    cta: "Enquire",
+    image: products.find((p) => p.id === "kan-077")?.image,
   },
 ];
 
@@ -49,7 +52,7 @@ export default function CollectionBanners() {
                 <p className="text-[11px] uppercase tracking-[0.2em] text-gold">{b.label}</p>
                 <h3 className="mt-1 font-display text-xl text-pearl">{b.title}</h3>
                 <span className="underline-grow mt-2 inline-flex items-center gap-1 text-xs uppercase tracking-wider text-mist group-hover:text-pearl">
-                  Shop Now <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  {b.cta} <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>
