@@ -943,10 +943,10 @@ export const products = [
   },
   {
     "id": "kan-078",
-    "name": "Veda Sculpted Band",
+    "name": "Zola Polished Band",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1360,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-078-1.jpg",
     "gallery": [
@@ -960,10 +960,10 @@ export const products = [
   },
   {
     "id": "kan-079",
-    "name": "Zola Polished Band",
+    "name": "Veda Sculpted Band",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1360,
+    "price": 1450,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-079-1.jpg",
     "gallery": [
