@@ -605,6 +605,324 @@ export const products = [
     "description": "Three crystals that grow in size on a slim paperclip chain.",
     "featured": false,
     "tags": []
+  },
+  {
+    "id": "kan-058",
+    "name": "Amara Roman Bangle",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1690,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-058-1.jpg",
+    "gallery": [
+      "/products/kan-058-1.jpg",
+      "/products/kan-058-2.jpg",
+      "/products/kan-058-3.jpg"
+    ],
+    "description": "A gold bangle cut with Roman-numeral detailing, a quiet, graphic everyday piece.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-059",
+    "name": "Celia Zircon Bangle",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1750,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
+    "image": "/products/kan-059-1.jpg",
+    "gallery": [
+      "/products/kan-059-1.jpg",
+      "/products/kan-059-2.jpg",
+      "/products/kan-059-3.jpg"
+    ],
+    "description": "A slim gold bangle set with sparkling zircon stones.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-060",
+    "name": "Flora Pink Tulip Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stones",
+    "image": "/products/kan-060-1.jpg",
+    "gallery": [
+      "/products/kan-060-1.jpg",
+      "/products/kan-060-2.jpg",
+      "/products/kan-060-3.jpg"
+    ],
+    "description": "Tulip blooms in soft pink stones on a gold-finish bracelet.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-061",
+    "name": "Astra Zircon Bangle",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 2050,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
+    "image": "/products/kan-061-1.jpg",
+    "gallery": [
+      "/products/kan-061-1.jpg",
+      "/products/kan-061-2.jpg",
+      "/products/kan-061-3.jpg"
+    ],
+    "description": "A statement gold bangle lined with zircon stones.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-062",
+    "name": "Flora Purple Tulip Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, Anti-Tarnish, Stones",
+    "image": "/products/kan-062-1.jpg",
+    "gallery": [
+      "/products/kan-062-1.jpg",
+      "/products/kan-062-2.jpg",
+      "/products/kan-062-3.jpg"
+    ],
+    "description": "Tulips in pink, purple and white stones on a silver-tone bracelet.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-063",
+    "name": "Triple Layer Snake Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2350,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-063-1.jpg",
+    "gallery": [
+      "/products/kan-063-1.jpg",
+      "/products/kan-063-2.jpg"
+    ],
+    "description": "Three snake chains layered in one necklace for an effortless, curated look.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-064",
+    "name": "Celia Clover Stone Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stone Beads",
+    "image": "/products/kan-064-1.jpg",
+    "gallery": [
+      "/products/kan-064-1.jpg",
+      "/products/kan-064-2.jpg"
+    ],
+    "description": "Clover charms and stone beads on a fine gold chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-065",
+    "name": "Astra Layered Charm Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-065-1.jpg",
+    "gallery": [
+      "/products/kan-065-1.jpg",
+      "/products/kan-065-2.jpg",
+      "/products/kan-065-3.jpg"
+    ],
+    "description": "Two layered chains with geometric charms.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-066",
+    "name": "Astra Interlocked Ring Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stones",
+    "image": "/products/kan-066-1.jpg",
+    "gallery": [
+      "/products/kan-066-1.jpg",
+      "/products/kan-066-2.jpg"
+    ],
+    "description": "Interlocked rings set with Roman numerals and stones.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-067",
+    "name": "Kira Geometric Charm Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1950,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-067-1.jpg",
+    "gallery": [
+      "/products/kan-067-1.jpg",
+      "/products/kan-067-2.jpg",
+      "/products/kan-067-3.jpg"
+    ],
+    "description": "Square geometric charms spaced along a gold chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-068",
+    "name": "Zola Y-Drop Minimalist Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1650,
+    "material": "316L Stainless Steel, Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-068-1.jpg",
+    "gallery": [
+      "/products/kan-068-1.jpg",
+      "/products/kan-068-2.jpg"
+    ],
+    "description": "A minimalist Y-shaped drop on a slim chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-069",
+    "name": "Iris Bamboo Bar Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1690,
+    "material": "316L Stainless Steel, Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-069-1.jpg",
+    "gallery": [
+      "/products/kan-069-1.jpg",
+      "/products/kan-069-2.jpg",
+      "/products/kan-069-3.jpg"
+    ],
+    "description": "An irregular bamboo-textured bar on a snake chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-070",
+    "name": "Astra Multi-Color Charm Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "316L Stainless Steel, Anti-Tarnish, Stones",
+    "image": "/products/kan-070-1.jpg",
+    "gallery": [
+      "/products/kan-070-1.jpg",
+      "/products/kan-070-2.jpg",
+      "/products/kan-070-3.jpg"
+    ],
+    "description": "Multicolour stone charms on a fine chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-071",
+    "name": "Saffron Multi-Layer Chain Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1690,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-071-1.jpg",
+    "gallery": [
+      "/products/kan-071-1.jpg",
+      "/products/kan-071-2.jpg",
+      "/products/kan-071-3.jpg"
+    ],
+    "description": "Several fine chains layered in a single necklace.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-072",
+    "name": "Seraphina Pearl Charm Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Pearl-effect Bead",
+    "image": "/products/kan-072-1.jpg",
+    "gallery": [
+      "/products/kan-072-1.jpg",
+      "/products/kan-072-2.jpg"
+    ],
+    "description": "Pearl charms along a gold chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-073",
+    "name": "Solana Silver Snake Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1390,
+    "material": "Stainless Steel, Silver Colour, Anti-Tarnish",
+    "image": "/products/kan-073-1.jpg",
+    "gallery": [
+      "/products/kan-073-1.jpg",
+      "/products/kan-073-2.jpg",
+      "/products/kan-073-3.jpg"
+    ],
+    "description": "A sleek silver-tone snake-chain anklet.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-074",
+    "name": "Sienna Snake Bead Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1550,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-074-1.jpg",
+    "gallery": [
+      "/products/kan-074-1.jpg",
+      "/products/kan-074-2.jpg",
+      "/products/kan-074-3.jpg"
+    ],
+    "description": "A dual-layer snake-chain anklet with bead detail.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
