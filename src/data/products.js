@@ -1178,6 +1178,40 @@ export const products = [
     "tags": [
       "new"
     ]
+  },
+  {
+    "id": "kan-090",
+    "name": "Saffron Dainty Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1750,
+    "material": "304 Stainless Steel, Gold Finish",
+    "image": "/products/kan-090-1.jpg",
+    "gallery": [
+      "/products/kan-090-1.jpg"
+    ],
+    "description": "A gold paperclip-link anklet with a few textured links, light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-091",
+    "name": "Amber Dew Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1550,
+    "material": "304 Stainless Steel, Gold Finish, Pearl-effect Bead",
+    "image": "/products/kan-091-1.jpg",
+    "gallery": [
+      "/products/kan-091-1.jpg"
+    ],
+    "description": "A delicate anklet of small pearl-effect beads alternating with gold balls.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
