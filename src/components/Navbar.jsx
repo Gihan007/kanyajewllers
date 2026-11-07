@@ -20,7 +20,7 @@ export default function Navbar() {
   const { count } = useCart();
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const transparent = isHome && !scrolled;
+  const transparent = isHome && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -151,45 +151,68 @@ export default function Navbar() {
           >
             <Heart size={18} />
           </button>
-          <Link to="/cart" aria-label="Cart" className={`relative transition-colors ${iconColor}`}>
+          <Link to="/cart" aria-label="Cart" className={`relative -m-2 p-2 transition-colors ${iconColor}`}>
             <ShoppingBag size={19} />
             {count > 0 && (
-              <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[10px] font-semibold text-sand">
+              <span className="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[10px] font-semibold text-sand">
                 {count}
               </span>
             )}
           </Link>
-          <button type="button" className={`md:hidden ${transparent ? "text-sand" : "text-pearl/80"}`} onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+          <button type="button" className={`-mr-2 p-2 md:hidden ${transparent ? "text-sand" : "text-pearl/80"}`} onClick={() => setOpen((v) => !v)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-ink/10 bg-panel px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5">
+        <div className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t border-ink/10 bg-panel px-6 py-4 md:hidden">
+          <div className="flex flex-col">
             <NavLink
               to="/"
               end
               onClick={() => setOpen(false)}
-              className={({ isActive }) => `font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`}
+              className={({ isActive }) => `py-3 font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`}
             >
               Home
             </NavLink>
             <NavLink
               to="/shop"
+              end
               onClick={() => setOpen(false)}
-              className={({ isActive }) => `font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`}
+              className={({ isActive }) => `py-3 font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`}
             >
               Shop
             </NavLink>
+            <div className="mb-1 flex flex-col border-l border-ink/10 pl-4">
+              {styles.map((st) => (
+                <Link
+                  key={st.key}
+                  to={`/shop?style=${st.key}`}
+                  onClick={() => setOpen(false)}
+                  className="py-2.5 font-sans text-xs uppercase tracking-[0.12em] text-mist"
+                >
+                  {st.label}
+                </Link>
+              ))}
+              {menuCategories.map((c) => (
+                <Link
+                  key={c}
+                  to={`/shop?category=${c}`}
+                  onClick={() => setOpen(false)}
+                  className="py-2.5 font-sans text-xs uppercase tracking-[0.12em] text-mist"
+                >
+                  {c}
+                </Link>
+              ))}
+            </div>
             {simpleLinks.map((l) => (
               <NavLink
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`
+                  `py-3 font-sans text-sm uppercase tracking-[0.15em] ${isActive ? "text-gold" : "text-pearl"}`
                 }
               >
                 {l.label}

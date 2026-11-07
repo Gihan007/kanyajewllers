@@ -19,7 +19,7 @@ export default function PhotoCollectionGrid() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link to={tile.to} className="group relative block aspect-[3/4] overflow-hidden">
+          <Link to={tile.to} className="group relative block aspect-[4/3] overflow-hidden sm:aspect-[3/4]">
             <img
               src={tile.image}
               alt={tile.title}

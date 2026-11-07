@@ -66,7 +66,6 @@ export default function Home() {
           <motion.div style={{ y: imageY }} className="absolute inset-x-0 -top-[6%] h-[112%]">
             <motion.video
               ref={videoRef}
-              src="/videos/hero.mp4"
               poster="/videos/hero-poster.jpg"
               autoPlay
               muted
@@ -81,7 +80,10 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1.6 }}
               className="h-full w-full object-cover"
-            />
+            >
+              <source src="/videos/hero-mobile.mp4" media="(max-width: 767px)" type="video/mp4" />
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </motion.video>
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/35 to-ink/10" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />

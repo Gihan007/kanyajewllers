@@ -58,7 +58,7 @@ export default function Shop() {
               <button
                 key={c}
                 onClick={() => setCategory(c)}
-                className={`rounded-full border px-4 py-1.5 text-xs uppercase tracking-wider transition-colors ${
+                className={`rounded-full border px-4 py-2 text-xs uppercase tracking-wider transition-colors ${
                   activeCategory === c
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-ink/16 text-mist hover:border-ink/40 hover:text-pearl"
@@ -72,7 +72,7 @@ export default function Shop() {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="rounded-full border border-ink/16 bg-panel px-4 py-1.5 text-xs uppercase tracking-wider text-mist outline-none focus:border-gold"
+            className="w-full rounded-full border border-ink/16 bg-panel px-4 py-2.5 text-xs uppercase tracking-wider text-mist outline-none focus:border-gold sm:w-auto"
           >
             <option value="featured">Featured</option>
             <option value="price-asc">Price: Low to High</option>

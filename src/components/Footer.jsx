@@ -31,13 +31,13 @@ export default function Footer() {
             Fine jewellery designed for the modern era — crafted with light, precision, and intent.
           </p>
           <div className="mt-6 flex gap-4 text-mist">
-            <a href="#" aria-label="Instagram" className="transition-colors hover:text-gold">
+            <a href="#" aria-label="Instagram" className="-m-2 p-2 transition-colors hover:text-gold">
               <InstagramIcon width={18} height={18} />
             </a>
-            <a href="#" aria-label="Facebook" className="transition-colors hover:text-gold">
+            <a href="#" aria-label="Facebook" className="-m-2 p-2 transition-colors hover:text-gold">
               <FacebookIcon width={18} height={18} />
             </a>
-            <a href="mailto:hello@kanya.example" aria-label="Email" className="transition-colors hover:text-gold">
+            <a href="mailto:hello@kanya.example" aria-label="Email" className="-m-2 p-2 transition-colors hover:text-gold">
               <Mail size={18} />
             </a>
           </div>
@@ -46,22 +46,22 @@ export default function Footer() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-gold">Shop</p>
           <ul className="mt-4 space-y-3 text-sm text-mist">
-            <li><Link to="/shop" className="hover:text-pearl">All Jewellery</Link></li>
-            <li><Link to="/shop?category=Rings" className="hover:text-pearl">Rings</Link></li>
-            <li><Link to="/shop?category=Necklaces" className="hover:text-pearl">Necklaces</Link></li>
-            <li><Link to="/shop?category=Earrings" className="hover:text-pearl">Earrings</Link></li>
+            <li><Link to="/shop" className="inline-block py-1.5 hover:text-pearl">All Jewellery</Link></li>
+            <li><Link to="/shop?category=Rings" className="inline-block py-1.5 hover:text-pearl">Rings</Link></li>
+            <li><Link to="/shop?category=Necklaces" className="inline-block py-1.5 hover:text-pearl">Necklaces</Link></li>
+            <li><Link to="/shop?category=Earrings" className="inline-block py-1.5 hover:text-pearl">Earrings</Link></li>
           </ul>
         </div>
 
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-gold">Company</p>
           <ul className="mt-4 space-y-3 text-sm text-mist">
-            <li><Link to="/build-your-story" className="hover:text-pearl">Build Your Story</Link></li>
-            <li><Link to="/gifting" className="hover:text-pearl">Gifting</Link></li>
-            <li><Link to="/about" className="hover:text-pearl">Our Story</Link></li>
-            <li><Link to="/contact" className="hover:text-pearl">Contact</Link></li>
-            <li><a href="#" className="hover:text-pearl">Shipping &amp; Returns</a></li>
-            <li><a href="#" className="hover:text-pearl">Care Guide</a></li>
+            <li><Link to="/build-your-story" className="inline-block py-1.5 hover:text-pearl">Build Your Story</Link></li>
+            <li><Link to="/gifting" className="inline-block py-1.5 hover:text-pearl">Gifting</Link></li>
+            <li><Link to="/about" className="inline-block py-1.5 hover:text-pearl">Our Story</Link></li>
+            <li><Link to="/contact" className="inline-block py-1.5 hover:text-pearl">Contact</Link></li>
+            <li><a href="#" className="inline-block py-1.5 hover:text-pearl">Shipping &amp; Returns</a></li>
+            <li><a href="#" className="inline-block py-1.5 hover:text-pearl">Care Guide</a></li>
           </ul>
         </div>
 

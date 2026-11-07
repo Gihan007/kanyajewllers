@@ -34,7 +34,7 @@ export default function LuxuryProductCard({ product }) {
         )}
       </Link>
 
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <p className="text-[10px] uppercase tracking-[0.15em] text-mist">
           {product.category} / Fine Jewelry
         </p>
@@ -42,8 +42,8 @@ export default function LuxuryProductCard({ product }) {
           <h3 className="mt-1.5 font-display text-lg text-pearl">{product.name}</h3>
         </Link>
         <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-mist">{product.description}</p>
-        <div className="mt-3 flex items-center justify-between">
-          <p className="flex items-baseline gap-2">
+        <div className="mt-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p className="flex flex-wrap items-baseline gap-x-2 whitespace-nowrap">
             <span className="text-base text-pearl">{formatPrice(product.price)}</span>
             {product.originalPrice && (
               <span className="text-xs text-mist line-through">{formatPrice(product.originalPrice)}</span>
@@ -52,7 +52,7 @@ export default function LuxuryProductCard({ product }) {
           <button
             type="button"
             onClick={() => addItem(product)}
-            className="text-[11px] uppercase tracking-wider text-gold underline-grow"
+            className="whitespace-nowrap py-1 text-[11px] uppercase tracking-wider text-gold underline-grow"
           >
             Add to Bag
           </button>

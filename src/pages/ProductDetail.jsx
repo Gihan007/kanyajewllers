@@ -38,7 +38,7 @@ export default function ProductDetail() {
     <div className="bg-aurora">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <nav className="mb-10 text-xs uppercase tracking-wider text-mist">
-          <Link to="/shop" className="hover:text-gold">Shop</Link> / <span className="text-pearl">{product.category}</span>
+          <Link to="/shop" className="inline-block py-2 hover:text-gold">Shop</Link> / <span className="text-pearl">{product.category}</span>
         </nav>
 
         <div className="grid gap-12 lg:grid-cols-2">
