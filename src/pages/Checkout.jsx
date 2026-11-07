@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Lock, MessageCircle, Check, FileDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { formatPrice, getProductById } from "../data/products";
-import { store, bankConfigured, cardEnabled, ordersOpen } from "../config";
+import { store, ordersOpen, paymentMethods } from "../config";
 import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
 
 const inputClass =
@@ -178,7 +178,7 @@ function Confirmation({ order }) {
 export default function Checkout() {
   const { items, clearCart } = useCart();
   const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", city: "", postalCode: "", notes: "", website: "" });
-  const [payment, setPayment] = useState(bankConfigured ? "Bank transfer" : "Online card payment");
+  const [payment, setPayment] = useState(paymentMethods.find((m) => m.enabled)?.key ?? "Bank transfer");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [placed, setPlaced] = useState(() => {
@@ -339,30 +339,27 @@ export default function Checkout() {
               <Lock size={14} /> Payment
             </h2>
             <div className="space-y-3">
-              <label
-                className={`flex items-start gap-3 rounded-xl border p-4 ${
-                  bankConfigured ? "cursor-pointer" : "opacity-50"
-                } ${payment === "Bank transfer" ? "border-gold bg-gold/5" : "border-ink/16"}`}
-              >
-                <input type="radio" name="payment" disabled={!bankConfigured} checked={payment === "Bank transfer"} onChange={() => setPayment("Bank transfer")} className="mt-1 accent-[var(--color-gold)]" />
-                <span>
-                  <span className="block text-sm text-pearl">Bank transfer</span>
-                  <span className="block text-xs text-mist">
-                    {bankConfigured ? "You get our bank details after placing the order. We pack once your payment slip is confirmed." : "Coming soon"}
+              {paymentMethods.map((m) => (
+                <label
+                  key={m.key}
+                  className={`flex items-start gap-3 rounded-xl border p-4 ${m.enabled ? "cursor-pointer" : "opacity-50"} ${
+                    payment === m.key ? "border-gold bg-gold/5" : "border-ink/16"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="payment"
+                    disabled={!m.enabled}
+                    checked={payment === m.key}
+                    onChange={() => setPayment(m.key)}
+                    className="mt-1 accent-[var(--color-gold)]"
+                  />
+                  <span>
+                    <span className="block text-sm text-pearl">{m.title}</span>
+                    <span className="block text-xs text-mist">{m.enabled ? m.note : "Coming soon"}</span>
                   </span>
-                </span>
-              </label>
-              <label
-                className={`flex items-start gap-3 rounded-xl border p-4 ${
-                  cardEnabled ? "cursor-pointer" : "opacity-50"
-                } ${payment === "Online card payment" ? "border-gold bg-gold/5" : "border-ink/16"}`}
-              >
-                <input type="radio" name="payment" disabled={!cardEnabled} checked={payment === "Online card payment"} onChange={() => setPayment("Online card payment")} className="mt-1 accent-[var(--color-gold)]" />
-                <span>
-                  <span className="block text-sm text-pearl">Online card payment</span>
-                  <span className="block text-xs text-mist">{cardEnabled ? "Pay securely by card." : "Coming soon"}</span>
-                </span>
-              </label>
+                </label>
+              ))}
             </div>
           </section>
 

@@ -31,3 +31,12 @@ export const store = {
 export const bankConfigured = Boolean(store.bank.bankName && store.bank.accountNumber);
 export const cardEnabled = store.payhere.enabled && Boolean(store.payhere.merchantId) && Boolean(store.orderEndpoint);
 export const ordersOpen = Boolean(store.whatsappNumber) && (bankConfigured || cardEnabled);
+
+// The payment choices shown at checkout, in this order. "enabled: false" shows "Coming soon".
+// Koko and Mintpay stay off until their merchant accounts are approved and connected (they need their own code).
+export const paymentMethods = [
+  { key: "Bank transfer", title: "Bank transfer", note: "You get our bank details after placing the order. We pack once your payment slip is confirmed.", enabled: bankConfigured },
+  { key: "Online card payment", title: "Online card payment", note: "Pay securely by card.", enabled: cardEnabled },
+  { key: "Koko", title: "Koko", note: "Buy now, pay later in instalments.", enabled: false },
+  { key: "Mintpay", title: "Mintpay", note: "Buy now, pay later in instalments.", enabled: false },
+];
