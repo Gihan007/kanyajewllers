@@ -1008,6 +1008,57 @@ export const products = [
     "tags": [
       "new"
     ]
+  },
+  {
+    "id": "kan-080",
+    "name": "Nova Minimalist Stud",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1150,
+    "material": "304 Stainless Steel, Gold Finish",
+    "image": "/products/kan-080-1.jpg",
+    "gallery": [
+      "/products/kan-080-1.jpg"
+    ],
+    "description": "A sculpted gold swirl earring on a post, bold and smooth with no extra detail.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-081",
+    "name": "Celeste Geo Stud",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1550,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-081-1.jpg",
+    "gallery": [
+      "/products/kan-081-1.jpg"
+    ],
+    "description": "Slim gold huggie hoops with a curved row of small crystals along the base.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-082",
+    "name": "Zephyr Delicate Stud",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-082-1.jpg",
+    "gallery": [
+      "/products/kan-082-1.jpg"
+    ],
+    "description": "A double-band earring that pairs a smooth gold curve with a crystal-pave one.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
