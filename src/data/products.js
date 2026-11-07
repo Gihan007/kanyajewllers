@@ -1059,6 +1059,125 @@ export const products = [
     "tags": [
       "new"
     ]
+  },
+  {
+    "id": "kan-083",
+    "name": "Luna Dewdrop Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2250,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-083-1.jpg",
+    "gallery": [
+      "/products/kan-083-1.jpg"
+    ],
+    "description": "A single teardrop crystal hanging from a fine gold chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-084",
+    "name": "Celeste Horizon Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "304 Stainless Steel, Gold Finish",
+    "image": "/products/kan-084-1.jpg",
+    "gallery": [
+      "/products/kan-084-1.jpg"
+    ],
+    "description": "Two gold chains layered together: a flat herringbone and a slim snake chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-085",
+    "name": "Amber Dawn Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1590,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-085-1.jpg",
+    "gallery": [
+      "/products/kan-085-1.jpg"
+    ],
+    "description": "An emerald-green rectangular crystal pendant with three small green accents.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-086",
+    "name": "Meadow Gold Strand",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2250,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-086-1.jpg",
+    "gallery": [
+      "/products/kan-086-1.jpg"
+    ],
+    "description": "A gold chain strung with round crystals and finished with a drop at the centre.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-087",
+    "name": "Iris Dusk Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1760,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-087-1.jpg",
+    "gallery": [
+      "/products/kan-087-1.jpg"
+    ],
+    "description": "A fan-shaped pendant outlined in tiny crystals around a round centre stone.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-088",
+    "name": "Solana Vine Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-088-1.jpg",
+    "gallery": [
+      "/products/kan-088-1.jpg"
+    ],
+    "description": "Two marquise crystals joined like leaves on a slim box chain.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-089",
+    "name": "Marigold Petal Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1750,
+    "material": "304 Stainless Steel, Gold Finish, Pearl-effect Bead",
+    "image": "/products/kan-089-1.jpg",
+    "gallery": [
+      "/products/kan-089-1.jpg"
+    ],
+    "description": "A four-petal gold flower with a black centre stone, paired with a single pearl bead.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
