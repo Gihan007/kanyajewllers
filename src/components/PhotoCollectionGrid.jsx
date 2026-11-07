@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { lifestyleImage, heroImage, ringsHeroImage } from "../data/products";
 
 const tiles = [
-  { title: "Vogue Collection", to: "/shop?category=Necklaces", image: lifestyleImage },
-  { title: "Timeless Vintage", to: "/shop?category=Rings", image: ringsHeroImage },
-  { title: "Celestial Earrings", to: "/shop?category=Earrings", image: heroImage },
+  { title: "Luminous Chains & Dainty Drops", cta: "Shop Necklaces", to: "/shop?category=Necklaces", image: "/photos/necklaces.jpg", pos: "50% 38%" },
+  { title: "Sculpted Gold & Whispering Bands", cta: "Shop Rings", to: "/shop?category=Rings", image: "/photos/rings.jpg", pos: "45% 60%" },
+  { title: "Botanical Grace & Subtle Glimmers", cta: "Shop Earrings", to: "/shop?category=Earrings", image: "/products/kan-081-1.jpg", pos: "50% 50%" },
 ];
 
 export default function PhotoCollectionGrid() {
@@ -24,12 +23,13 @@ export default function PhotoCollectionGrid() {
               src={tile.image}
               alt={tile.title}
               loading="lazy"
+              style={{ objectPosition: tile.pos }}
               className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent transition-opacity duration-500 group-hover:from-ink/80" />
             <div className="absolute inset-x-0 bottom-8 flex translate-y-3 flex-col items-center text-center transition-transform duration-500 group-hover:translate-y-0">
-              <h3 className="font-display text-2xl text-sand">{tile.title}</h3>
-              <span className="btn-outline-light mt-4 px-6 py-2 text-xs uppercase tracking-wider">Shop Now</span>
+              <h3 className="px-6 font-display text-2xl text-sand">{tile.title}</h3>
+              <span className="btn-outline-light mt-4 px-6 py-2 text-xs uppercase tracking-wider">{tile.cta}</span>
             </div>
           </Link>
         </motion.div>
