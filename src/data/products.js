@@ -923,6 +923,91 @@ export const products = [
     "tags": [
       "new"
     ]
+  },
+  {
+    "id": "kan-075",
+    "name": "Sienna Sleek Band",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1390,
+    "material": "304 Stainless Steel, Gold Finish",
+    "image": "/products/kan-075-1.jpg",
+    "gallery": [
+      "/products/kan-075-1.jpg"
+    ],
+    "description": "A smooth, slim gold band, made to be worn alone or stacked.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-076",
+    "name": "Rhea Minimalist Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1250,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-076-1.jpg",
+    "gallery": [
+      "/products/kan-076-1.jpg"
+    ],
+    "description": "An open gold ring with a bead end and a single emerald-green teardrop crystal, adjustable to fit.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-077",
+    "name": "Kira Hammered Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1250,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-077-1.jpg",
+    "gallery": [
+      "/products/kan-077-1.jpg"
+    ],
+    "description": "A fine twisted-rope band holding one oval crystal in a four-claw setting.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-078",
+    "name": "Veda Sculpted Band",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-078-1.jpg",
+    "gallery": [
+      "/products/kan-078-1.jpg"
+    ],
+    "description": "A sculpted open ring that wraps between a clear oval crystal and a ruby-red teardrop.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-079",
+    "name": "Zola Polished Band",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1360,
+    "material": "304 Stainless Steel, Gold Finish, Crystal",
+    "image": "/products/kan-079-1.jpg",
+    "gallery": [
+      "/products/kan-079-1.jpg"
+    ],
+    "description": "A polished gold band set with three crystals: two round and a teardrop in the centre.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
