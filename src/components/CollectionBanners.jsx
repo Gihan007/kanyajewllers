@@ -14,7 +14,7 @@ const banners = [
     label: "Collection",
     title: "Layered Necklaces",
     to: "/shop?category=Necklaces",
-    image: products.find((p) => p.id === "kan-034")?.image,
+    image: products.find((p) => p.category === "Necklaces")?.image,
   },
   {
     label: "Collection",
