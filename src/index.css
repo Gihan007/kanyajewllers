@@ -21,6 +21,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Visible keyboard focus everywhere (mouse clicks stay clean) */
+:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 2px;
+}
+
+/* Respect "reduce motion" system setting */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 video::-webkit-media-controls,
 video::-webkit-media-controls-start-playback-button,
 video::-webkit-media-controls-overlay-play-button {

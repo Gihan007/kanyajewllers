@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { ToastProvider } from './context/ToastContext.jsx'
 
 class ErrorBoundary extends Component {
   state = { error: null }
@@ -32,7 +33,9 @@ createRoot(document.getElementById('root')).render(
     <ErrorBoundary>
       <BrowserRouter>
         <CartProvider>
-          <App />
+          <ToastProvider>
+            <App />
+          </ToastProvider>
         </CartProvider>
       </BrowserRouter>
     </ErrorBoundary>

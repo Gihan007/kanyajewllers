@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Minus, Plus, ShieldCheck, Truck, Undo2 } from "lucide-react";
+import { Minus, Plus, ShieldCheck, Truck, Undo2, ZoomIn } from "lucide-react";
+import Lightbox from "../components/Lightbox";
+import { useToast } from "../context/ToastContext";
 import { getProductById, products, formatPrice } from "../data/products";
 import { store } from "../config";
 import { useCart } from "../context/CartContext";
@@ -14,6 +16,25 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
   const [added, setAdded] = useState(false);
+  const [viewer, setViewer] = useState(false);
+  const [showBar, setShowBar] = useState(false);
+  const addRef = useRef(null);
+  const toast = useToast();
+
+  // Show the sticky bottom bar once the main "Add to Bag" button has scrolled out of view.
+  useEffect(() => {
+    const check = () => {
+      const el = addRef.current;
+      if (el) setShowBar(el.getBoundingClientRect().bottom < 0);
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, [id]);
 
   if (!product) {
     return (
@@ -30,6 +51,7 @@ export default function ProductDetail() {
 
   const handleAdd = () => {
     addItem(product, qty);
+    toast({ title: "Added to bag", text: `${product.name}${qty > 1 ? ` × ${qty}` : ""}`, image: product.image });
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   };
@@ -43,17 +65,28 @@ export default function ProductDetail() {
 
         <div className="grid gap-12 lg:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <div className="glass overflow-hidden rounded-2xl border border-ink/16 p-2">
+            <button
+              type="button"
+              onClick={() => setViewer(true)}
+              aria-label={`Open ${product.name} photos full screen`}
+              className="glass group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-ink/16 p-2"
+            >
               <img
                 src={product.gallery[activeImage]}
                 alt={product.name}
-                className="aspect-[4/5] w-full rounded-xl object-cover"
+                className="aspect-[4/5] w-full rounded-xl bg-line/40 object-cover"
               />
-            </div>
+              <span className="absolute bottom-4 right-4 flex items-center gap-1.5 rounded-full bg-ink/70 px-3 py-1.5 text-[11px] uppercase tracking-wider text-sand backdrop-blur">
+                <ZoomIn size={13} /> Zoom
+              </span>
+            </button>
             <div className="mt-4 flex gap-3">
               {product.gallery.map((img, i) => (
                 <button
                   key={img}
+                  type="button"
+                  aria-label={`Show photo ${i + 1}`}
+                  aria-pressed={activeImage === i}
                   onClick={() => setActiveImage(i)}
                   className={`h-20 w-20 overflow-hidden rounded-lg border-2 transition-colors ${
                     activeImage === i ? "border-gold" : "border-ink/16"
@@ -91,7 +124,7 @@ export default function ProductDetail() {
                 </button>
               </div>
 
-              <button onClick={handleAdd} className="btn-dark flex-1 py-3.5 text-sm uppercase tracking-wider">
+              <button ref={addRef} onClick={handleAdd} className="btn-dark flex-1 py-3.5 text-sm uppercase tracking-wider">
                 {added ? "Added to Bag ✓" : "Add to Bag"}
               </button>
             </div>
@@ -114,6 +147,39 @@ export default function ProductDetail() {
             </div>
           </div>
         )}
+      </div>
+
+      {viewer && (
+        <Lightbox
+          images={product.gallery}
+          index={activeImage}
+          alt={product.name}
+          onChange={setActiveImage}
+          onClose={() => setViewer(false)}
+        />
+      )}
+
+      {/* Sticky bar for phones: keeps price and Add to Bag in reach while reading */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-40 border-t border-ink/16 bg-panel/95 px-4 py-3 backdrop-blur transition-transform duration-300 lg:hidden ${
+          showBar ? "translate-y-0" : "translate-y-full"
+        }`}
+        aria-hidden={!showBar}
+      >
+        <div className="mx-auto flex max-w-xl items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm text-pearl">{product.name}</p>
+            <p className="text-sm text-mist">{formatPrice(product.price)}</p>
+          </div>
+          <button
+            type="button"
+            onClick={handleAdd}
+            tabIndex={showBar ? 0 : -1}
+            className="btn-dark px-6 py-3 text-xs uppercase tracking-wider"
+          >
+            {added ? "Added ✓" : "Add to Bag"}
+          </button>
+        </div>
       </div>
     </div>
   );

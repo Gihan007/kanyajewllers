@@ -2,6 +2,7 @@ import { useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
@@ -25,8 +26,14 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-sand">
       <ScrollToTop />
+      <a
+        href="#main"
+        className="sr-only z-[80] rounded bg-ink px-4 py-2 text-sand focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main className="flex-1">
+      <main id="main" className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -40,6 +47,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

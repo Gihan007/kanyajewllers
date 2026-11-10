@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useToast } from "../context/ToastContext";
 import { Plus } from "lucide-react";
 import { formatPrice } from "../data/products";
 
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
+  const toast = useToast();
 
   return (
     <div className="card-hover group relative overflow-hidden rounded-2xl border border-ink/14 bg-panel">
@@ -27,9 +29,12 @@ export default function ProductCard({ product }) {
       </Link>
       <button
         type="button"
-        onClick={() => addItem(product)}
+        onClick={() => {
+          addItem(product);
+          toast({ title: "Added to bag", text: product.name, image: product.image });
+        }}
         aria-label={`Add ${product.name} to cart`}
-        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-ink/70 text-gold opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100 hover:bg-gold hover:text-ink"
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-ink/70 text-gold backdrop-blur transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100 hover:bg-gold hover:text-ink"
       >
         <Plus size={18} />
       </button>
