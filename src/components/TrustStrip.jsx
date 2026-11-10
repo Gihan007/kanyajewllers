@@ -9,7 +9,7 @@ const items = [
 export default function TrustStrip() {
   return (
     <section className="border-b border-ink/10 bg-cream">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-8 sm:grid-cols-4 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-16 gap-y-4 px-6 py-8 lg:px-10">
         {items.map((item, i) => (
           <motion.div
             key={item.label}
@@ -18,7 +18,7 @@ export default function TrustStrip() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
             whileHover={{ y: -2 }}
-            className="flex items-center justify-center gap-3 sm:justify-start"
+            className="flex items-center justify-center gap-3"
           >
             <motion.span
               initial={{ scale: 0.6, rotate: -12 }}
