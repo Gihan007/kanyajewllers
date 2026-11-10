@@ -33,3 +33,7 @@ qimati-links.txt
 documents/
 public/prices.json
 WhatsApp Video*.mp4
+
+# local secrets
+.env
+.env.*

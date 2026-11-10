@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, MotionConfig, useScroll, useTransform } from "framer-motion";
-import CollectionBanners from "../components/CollectionBanners";
 import TrustStrip from "../components/TrustStrip";
 import LuxuryJewelry from "../components/LuxuryJewelry";
 import StoryBrand from "../components/StoryBrand";
@@ -148,7 +147,6 @@ export default function Home() {
         </div>
       </section>
 
-      <CollectionBanners />
       <TrustStrip />
       <LuxuryJewelry />
       <StoryBrand />

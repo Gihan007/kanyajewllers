@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const tiles = [
   { title: "Luminous Chains & Dainty Drops", cta: "Shop Necklaces", to: "/shop?category=Necklaces", image: "/photos/necklaces.jpg", pos: "50% 38%" },
-  { title: "Sculpted Gold & Whispering Bands", cta: "Shop Rings", to: "/shop?category=Rings", image: "/photos/rings.jpg", pos: "45% 60%" },
-  { title: "Botanical Grace & Subtle Glimmers", cta: "Shop Earrings", to: "/shop?category=Earrings", image: "/products/kan-081-1.jpg", pos: "50% 50%" },
+  { title: "Sculpted Gold & Whispering Bands", cta: "Shop Rings", to: "/shop?category=Rings", image: "/photos/tile-rings.jpg", pos: "50% 50%" },
+  { title: "Botanical Grace & Subtle Glimmers", cta: "Shop Earrings", to: "/shop?category=Earrings", image: "/photos/tile-earrings.jpg", pos: "50% 50%" },
 ];
 
 export default function PhotoCollectionGrid() {

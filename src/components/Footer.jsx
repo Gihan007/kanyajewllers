@@ -57,7 +57,6 @@ export default function Footer() {
           <p className="text-xs uppercase tracking-[0.2em] text-gold">Company</p>
           <ul className="mt-4 space-y-3 text-sm text-mist">
             <li><Link to="/build-your-story" className="inline-block py-1.5 hover:text-pearl">Build Your Story</Link></li>
-            <li><Link to="/gifting" className="inline-block py-1.5 hover:text-pearl">Gifting</Link></li>
             <li><Link to="/about" className="inline-block py-1.5 hover:text-pearl">Our Story</Link></li>
             <li><Link to="/contact" className="inline-block py-1.5 hover:text-pearl">Contact</Link></li>
             <li><a href="#" className="inline-block py-1.5 hover:text-pearl">Shipping &amp; Returns</a></li>

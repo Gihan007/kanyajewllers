@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { lifestyleImage } from "../data/products";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -20,7 +19,7 @@ export default function About() {
           transition={{ delay: 0.1 }}
           className="mt-4 font-display text-5xl text-pearl sm:text-6xl"
         >
-          Crafted at the edge of <span className="text-gradient-gold italic">tradition and tomorrow</span>
+          Crafted for the <span className="text-gradient-gold italic">modern minimalist.</span>
         </motion.h1>
         <motion.p
           initial="hidden"
@@ -29,25 +28,25 @@ export default function About() {
           transition={{ delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-mist"
         >
-          KANYÃ was founded on a simple idea: fine jewellery shouldn't feel like it belongs to the past.
-          Every piece we make blends time-honoured craftsmanship with a modern, minimal design language —
-          built for the way people actually live, move, and shine today.
+          KANYA was founded on a simple idea: everyday luxury shouldn't be fragile. Every piece we curate
+          blends a clean, modern aesthetic with waterproof, tarnish-free 316L stainless steel—built for the
+          way you actually live, move, and shine every day.
         </motion.p>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-24 sm:grid-cols-3 lg:px-10">
         {[
           {
-            title: "Ethically Sourced",
-            desc: "Every gemstone and metal is traceable, certified, and responsibly obtained.",
+            title: "Curated Drops",
+            desc: "Sourced in small, intentional batches to ensure unique pieces and zero unnecessary waste.",
           },
           {
-            title: "Made to Order",
-            desc: "Most pieces are crafted in small batches to reduce waste and maximize quality.",
+            title: "Waterproof & Tarnish-Free",
+            desc: "Crafted from durable 316L stainless steel designed to withstand water, sweat, and daily wear without losing its shine.",
           },
           {
-            title: "Built to Last",
-            desc: "Lifetime warranty on craftsmanship, with free resizing and cleaning.",
+            title: "Effortless Everyday",
+            desc: "Lightweight, skin-friendly, and versatile pieces made to transition seamlessly from morning coffee to evening plans.",
           },
         ].map((item, i) => (
           <motion.div
@@ -69,19 +68,20 @@ export default function About() {
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
           <div className="grid gap-10 sm:grid-cols-2">
             <img
-              src={lifestyleImage}
-              alt="KANYÃ studio"
+              src="/photos/about-rope.jpg"
+              alt="KANYA rings on rope"
               className="rounded-2xl object-cover"
             />
             <div className="flex flex-col justify-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-gold">The Studio</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-gold">The Philosophy</p>
               <h2 className="mt-3 font-display text-3xl text-pearl">
-                Designed digitally, finished by hand.
+                Jewelry that keeps up with you.
               </h2>
               <p className="mt-4 text-mist">
-                Our team works between 3D modeling software and the bench — prototyping in the digital
-                space, then handcrafting every final piece with traditional goldsmithing techniques.
-                It's this balance of futuristic process and timeless skill that defines everything we make.
+                We believe you shouldn't have to take your jewelry off before stepping into the shower,
+                heading to the gym, or diving into a busy day. By focusing on durable 316L stainless steel
+                with a warm, earthy luxury finish, KANYA brings you effortless staple pieces you can
+                literally live in.
               </p>
             </div>
           </div>

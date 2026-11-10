@@ -11,7 +11,6 @@ import PaymentReturn from "./pages/PaymentReturn";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BuildYourStory from "./pages/BuildYourStory";
-import Gifting from "./pages/Gifting";
 
 // Every new page opens at the top instead of keeping the previous page's scroll position.
 function ScrollToTop() {
@@ -38,7 +37,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/build-your-story" element={<BuildYourStory />} />
-          <Route path="/gifting" element={<Gifting />} />
         </Routes>
       </main>
       <Footer />

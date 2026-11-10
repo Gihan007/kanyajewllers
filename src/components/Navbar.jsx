@@ -8,7 +8,6 @@ const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets"
 
 const simpleLinks = [
   { to: "/build-your-story", label: "Build Your Story" },
-  { to: "/gifting", label: "Gifting" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];

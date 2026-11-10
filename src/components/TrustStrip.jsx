@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { Truck, ShieldCheck, Headset, Gem } from "lucide-react";
+import { Headset, Gem } from "lucide-react";
 
 const items = [
-  { icon: Truck, label: "Free Delivery" },
-  { icon: ShieldCheck, label: "Money Back Guarantee" },
   { icon: Headset, label: "24/7 Support" },
   { icon: Gem, label: "High Quality" },
 ];
