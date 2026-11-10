@@ -37,7 +37,7 @@ export default function Footer() {
             <a href="#" aria-label="Facebook" className="-m-2 p-2 transition-colors hover:text-gold">
               <FacebookIcon width={18} height={18} />
             </a>
-            <a href="mailto:hello@kanya.example" aria-label="Email" className="-m-2 p-2 transition-colors hover:text-gold">
+            <a href="mailto:orders@kanyajewellers.com" aria-label="Email" className="-m-2 p-2 transition-colors hover:text-gold">
               <Mail size={18} />
             </a>
           </div>
