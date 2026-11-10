@@ -70,7 +70,7 @@ export default function About() {
             <img
               src="/photos/about-rope.jpg"
               alt="KANYA rings on rope"
-              className="rounded-2xl object-cover"
+              className="aspect-[4/5] w-full rounded-2xl object-cover object-[50%_60%]"
             />
             <div className="flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.2em] text-gold">The Philosophy</p>
