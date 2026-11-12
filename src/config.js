@@ -4,7 +4,7 @@ export const store = {
 
   // WhatsApp number that receives every order, digits only with country code (Sri Lanka = 94, drop the leading 0).
   // Example: 0771234567 -> "94771234567". Leave empty and checkout stays closed.
-  whatsappNumber: "94721102027",
+  whatsappNumber: "94716988498",
 
   // Google Apps Script web app URL that saves each order to your Google Sheet (see order-backend/README.md).
   // Optional: with it empty, orders still arrive on WhatsApp but are not saved to the sheet.
