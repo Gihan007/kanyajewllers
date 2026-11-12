@@ -1178,6 +1178,873 @@ export const products = [
     "tags": [
       "new"
     ]
+  },
+  {
+    "id": "kan-092",
+    "name": "Isla Liquid Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1250,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-092-1.jpg",
+    "gallery": [
+      "/products/kan-092-1.jpg"
+    ],
+    "description": "Isla Liquid Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-093",
+    "name": "Saffron Multi-Band Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1350,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-093-1.jpg",
+    "gallery": [
+      "/products/kan-093-1.jpg"
+    ],
+    "description": "Saffron Multi-Band Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-094",
+    "name": "Terra Ripple Open Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1350,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-094-1.jpg",
+    "gallery": [
+      "/products/kan-094-1.jpg"
+    ],
+    "description": "Terra Ripple Open Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-095",
+    "name": "Vela Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1360,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-095-1.jpg",
+    "gallery": [
+      "/products/kan-095-1.jpg"
+    ],
+    "description": "Vela Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-096",
+    "name": "Clover Muse",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1650,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-096-1.jpg",
+    "gallery": [
+      "/products/kan-096-1.jpg"
+    ],
+    "description": "Clover Muse, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-097",
+    "name": "Amora Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-097-1.jpg",
+    "gallery": [
+      "/products/kan-097-1.jpg"
+    ],
+    "description": "Amora Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-098",
+    "name": "Solene Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-098-1.jpg",
+    "gallery": [
+      "/products/kan-098-1.jpg"
+    ],
+    "description": "Solene Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-099",
+    "name": "Zaria Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-099-1.jpg",
+    "gallery": [
+      "/products/kan-099-1.jpg"
+    ],
+    "description": "Zaria Ring, a stainless steel ring with an anti-tarnish finish, made for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-100",
+    "name": "Lumi Hoops",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-100-1.jpg",
+    "gallery": [
+      "/products/kan-100-1.jpg"
+    ],
+    "description": "Lumi Hoops, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-101",
+    "name": "Petal Drop",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1490,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-101-1.jpg",
+    "gallery": [
+      "/products/kan-101-1.jpg"
+    ],
+    "description": "Petal Drop, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-102",
+    "name": "Solstice Drops",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1690,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-102-1.jpg",
+    "gallery": [
+      "/products/kan-102-1.jpg"
+    ],
+    "description": "Solstice Drops, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-103",
+    "name": "Barely There Hoops",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1590,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-103-1.jpg",
+    "gallery": [
+      "/products/kan-103-1.jpg"
+    ],
+    "description": "Barely There Hoops, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-104",
+    "name": "Auralis Hoops",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1590,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-104-1.jpg",
+    "gallery": [
+      "/products/kan-104-1.jpg"
+    ],
+    "description": "Auralis Hoops, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-105",
+    "name": "Everglow Hoops",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1590,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-105-1.jpg",
+    "gallery": [
+      "/products/kan-105-1.jpg"
+    ],
+    "description": "Everglow Hoops, anti-tarnish stainless steel earrings that are light and easy to wear daily.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-106",
+    "name": "Zola Sleek Cuff",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 2050,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-106-1.jpg",
+    "gallery": [
+      "/products/kan-106-1.jpg"
+    ],
+    "description": "Zola Sleek Cuff, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-107",
+    "name": "Kira Hammered Bangle",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 2050,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-107-1.jpg",
+    "gallery": [
+      "/products/kan-107-1.jpg"
+    ],
+    "description": "Kira Hammered Bangle, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-108",
+    "name": "Nala Polished Cuff",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 2050,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-108-1.jpg",
+    "gallery": [
+      "/products/kan-108-1.jpg"
+    ],
+    "description": "Nala Polished Cuff, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-109",
+    "name": "Lira Dainty Link",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-109-1.jpg",
+    "gallery": [
+      "/products/kan-109-1.jpg"
+    ],
+    "description": "Lira Dainty Link, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-110",
+    "name": "Thalassa Wave Chain",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1350,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-110-1.jpg",
+    "gallery": [
+      "/products/kan-110-1.jpg"
+    ],
+    "description": "Thalassa Wave Chain, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-111",
+    "name": "Ember Petite Link",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-111-1.jpg",
+    "gallery": [
+      "/products/kan-111-1.jpg"
+    ],
+    "description": "Ember Petite Link, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-112",
+    "name": "Nova Gold Strand",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-112-1.jpg",
+    "gallery": [
+      "/products/kan-112-1.jpg"
+    ],
+    "description": "Nova Gold Strand, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-113",
+    "name": "Rhea Minimalist Chain",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-113-1.jpg",
+    "gallery": [
+      "/products/kan-113-1.jpg"
+    ],
+    "description": "Rhea Minimalist Chain, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-114",
+    "name": "Veda Thread Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1550,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-114-1.jpg",
+    "gallery": [
+      "/products/kan-114-1.jpg"
+    ],
+    "description": "Veda Thread Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-115",
+    "name": "Maya Chic Link",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-115-1.jpg",
+    "gallery": [
+      "/products/kan-115-1.jpg"
+    ],
+    "description": "Maya Chic Link, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-116",
+    "name": "Orla Gleam Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-116-1.jpg",
+    "gallery": [
+      "/products/kan-116-1.jpg"
+    ],
+    "description": "Orla Gleam Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-117",
+    "name": "Sora Fine Link",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1250,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-117-1.jpg",
+    "gallery": [
+      "/products/kan-117-1.jpg"
+    ],
+    "description": "Sora Fine Link, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-118",
+    "name": "Calla Meadow Bangle",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-118-1.jpg",
+    "gallery": [
+      "/products/kan-118-1.jpg"
+    ],
+    "description": "Calla Meadow Bangle, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-119",
+    "name": "Astra Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-119-1.jpg",
+    "gallery": [
+      "/products/kan-119-1.jpg"
+    ],
+    "description": "Astra Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-120",
+    "name": "Elara Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-120-1.jpg",
+    "gallery": [
+      "/products/kan-120-1.jpg"
+    ],
+    "description": "Elara Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-121",
+    "name": "Gemora Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1560,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-121-1.jpg",
+    "gallery": [
+      "/products/kan-121-1.jpg"
+    ],
+    "description": "Gemora Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-122",
+    "name": "Flora Belle Bracelet",
+    "category": "Bracelets",
+    "style": "tarnish",
+    "price": 1650,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-122-1.jpg",
+    "gallery": [
+      "/products/kan-122-1.jpg"
+    ],
+    "description": "Flora Belle Bracelet, an anti-tarnish stainless steel bracelet that stays bright with everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-123",
+    "name": "Solara Duo",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-123-1.jpg",
+    "gallery": [
+      "/products/kan-123-1.jpg"
+    ],
+    "description": "Solara Duo, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-124",
+    "name": "Rosé Stardust",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2250,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-124-1.jpg",
+    "gallery": [
+      "/products/kan-124-1.jpg"
+    ],
+    "description": "Rosé Stardust, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-125",
+    "name": "Golden Dune",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1560,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-125-1.jpg",
+    "gallery": [
+      "/products/kan-125-1.jpg"
+    ],
+    "description": "Golden Dune, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-126",
+    "name": "Celestial Dew",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1960,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-126-1.jpg",
+    "gallery": [
+      "/products/kan-126-1.jpg"
+    ],
+    "description": "Celestial Dew, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-127",
+    "name": "Amber Bloom",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1560,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-127-1.jpg",
+    "gallery": [
+      "/products/kan-127-1.jpg"
+    ],
+    "description": "Amber Bloom, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-128",
+    "name": "Moonlit Pearl",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1890,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-128-1.jpg",
+    "gallery": [
+      "/products/kan-128-1.jpg"
+    ],
+    "description": "Moonlit Pearl, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-129",
+    "name": "Solstice Glow",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1460,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-129-1.jpg",
+    "gallery": [
+      "/products/kan-129-1.jpg"
+    ],
+    "description": "Solstice Glow, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-130",
+    "name": "Meadow Whisper",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-130-1.jpg",
+    "gallery": [
+      "/products/kan-130-1.jpg"
+    ],
+    "description": "Meadow Whisper, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-131",
+    "name": "Terra Pearl",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-131-1.jpg",
+    "gallery": [
+      "/products/kan-131-1.jpg"
+    ],
+    "description": "Terra Pearl, an anti-tarnish stainless steel necklace that is light on the neck for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-132",
+    "name": "Perla Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 2150,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-132-1.jpg",
+    "gallery": [
+      "/products/kan-132-1.jpg"
+    ],
+    "description": "Perla Anklet, an anti-tarnish stainless steel anklet for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-133",
+    "name": "Sienna Chain Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-133-1.jpg",
+    "gallery": [
+      "/products/kan-133-1.jpg"
+    ],
+    "description": "Sienna Chain Anklet, an anti-tarnish stainless steel anklet for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-134",
+    "name": "Dewdrop Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1750,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-134-1.jpg",
+    "gallery": [
+      "/products/kan-134-1.jpg"
+    ],
+    "description": "Dewdrop Anklet, an anti-tarnish stainless steel anklet for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-135",
+    "name": "Café Link Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1450,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-135-1.jpg",
+    "gallery": [
+      "/products/kan-135-1.jpg"
+    ],
+    "description": "Café Link Anklet, an anti-tarnish stainless steel anklet for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-136",
+    "name": "Golden Raindrops Anklet",
+    "category": "Anklets",
+    "style": "tarnish",
+    "price": 1550,
+    "material": "Stainless Steel, Gold Finish",
+    "image": "/products/kan-136-1.jpg",
+    "gallery": [
+      "/products/kan-136-1.jpg"
+    ],
+    "description": "Golden Raindrops Anklet, an anti-tarnish stainless steel anklet for everyday wear.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-137",
+    "name": "Celeste Star",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1190,
+    "material": "Stainless Steel, Silver Finish, Clear Stone",
+    "image": "/products/kan-137-1.jpg",
+    "gallery": [
+      "/products/kan-137-1.jpg"
+    ],
+    "description": "Celeste Star, anti-tarnish stainless steel earrings with clear sparkling stones in a silver finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-138",
+    "name": "Celeste Bloom",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1390,
+    "material": "Stainless Steel, Silver Finish, Clear Stone",
+    "image": "/products/kan-138-1.jpg",
+    "gallery": [
+      "/products/kan-138-1.jpg"
+    ],
+    "description": "Celeste Bloom, anti-tarnish stainless steel earrings with clear sparkling stones in a silver finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-139",
+    "name": "Celeste Teardrop",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1490,
+    "material": "Stainless Steel, Silver Finish, Clear Stone",
+    "image": "/products/kan-139-1.jpg",
+    "gallery": [
+      "/products/kan-139-1.jpg"
+    ],
+    "description": "Celeste Teardrop, anti-tarnish stainless steel earrings with clear sparkling stones in a silver finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-140",
+    "name": "Flora Star",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1190,
+    "material": "Stainless Steel, Gold Finish, Clear Stone",
+    "image": "/products/kan-140-1.jpg",
+    "gallery": [
+      "/products/kan-140-1.jpg"
+    ],
+    "description": "Flora Star, anti-tarnish stainless steel earrings with clear sparkling stones in a gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-141",
+    "name": "Daisy Muse",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1390,
+    "material": "Stainless Steel, Gold Finish, Clear Stone",
+    "image": "/products/kan-141-1.jpg",
+    "gallery": [
+      "/products/kan-141-1.jpg"
+    ],
+    "description": "Daisy Muse, anti-tarnish stainless steel earrings with clear sparkling stones in a gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-142",
+    "name": "Pearl Dew",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 1490,
+    "material": "Stainless Steel, Gold Finish, Clear Stone",
+    "image": "/products/kan-142-1.jpg",
+    "gallery": [
+      "/products/kan-142-1.jpg"
+    ],
+    "description": "Pearl Dew, anti-tarnish stainless steel earrings with clear sparkling stones in a gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
   }
 ];
 
