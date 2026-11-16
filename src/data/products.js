@@ -43,36 +43,6 @@ export const products = [
     "tags": []
   },
   {
-    "id": "kan-037",
-    "name": "Classic Gold Band Ring",
-    "category": "Rings",
-    "style": "tarnish",
-    "price": 1000,
-    "material": "304 Stainless Steel, Gold Finish",
-    "image": "/products/kan-037-1.jpg",
-    "gallery": [
-      "/products/kan-037-1.jpg"
-    ],
-    "description": "A slim polished band in warm gold, made for everyday wear and easy stacking.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-038",
-    "name": "Duo Stone Open Ring",
-    "category": "Rings",
-    "style": "tarnish",
-    "price": 2100,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-038-1.jpg",
-    "gallery": [
-      "/products/kan-038-1.jpg"
-    ],
-    "description": "An open ring pairing a clear oval stone with a deep red pear-cut stone.",
-    "featured": false,
-    "tags": []
-  },
-  {
     "id": "kan-039",
     "name": "Crystal Ear Jacket Studs",
     "category": "Earrings",
@@ -88,21 +58,6 @@ export const products = [
     "tags": []
   },
   {
-    "id": "kan-040",
-    "name": "Crystal Arc Huggie Earrings",
-    "category": "Earrings",
-    "style": "tarnish",
-    "price": 990,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-040-1.jpg",
-    "gallery": [
-      "/products/kan-040-1.jpg"
-    ],
-    "description": "Polished gold huggies with a row of crystals along the lower curve.",
-    "featured": false,
-    "tags": []
-  },
-  {
     "id": "kan-041",
     "name": "Pave Square Huggie Earrings",
     "category": "Earrings",
@@ -114,21 +69,6 @@ export const products = [
       "/products/kan-041-1.jpg"
     ],
     "description": "Compact square huggies covered in three rows of sparkling crystals.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-042",
-    "name": "Swirl Sculpt Earrings",
-    "category": "Earrings",
-    "style": "tarnish",
-    "price": 990,
-    "material": "304 Stainless Steel, Gold Finish",
-    "image": "/products/kan-042-1.jpg",
-    "gallery": [
-      "/products/kan-042-1.jpg"
-    ],
-    "description": "Bold, glossy gold swirls on a post back, light enough for all-day wear.",
     "featured": false,
     "tags": []
   },
@@ -163,51 +103,6 @@ export const products = [
     "tags": []
   },
   {
-    "id": "kan-045",
-    "name": "Seashell Starfish Cuff",
-    "category": "Bracelets",
-    "style": "tarnish",
-    "price": 1150,
-    "material": "304 Stainless Steel, Gold Finish",
-    "image": "/products/kan-045-1.jpg",
-    "gallery": [
-      "/products/kan-045-1.jpg"
-    ],
-    "description": "An open cuff with a textured shell and two starfish on twisted bands.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-046",
-    "name": "Sunburst Statement Cuff",
-    "category": "Bracelets",
-    "style": "tarnish",
-    "price": 1450,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-046-1.jpg",
-    "gallery": [
-      "/products/kan-046-1.jpg"
-    ],
-    "description": "A radiant sun at the centre of an open cuff, flanked by crystal medallions.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-047",
-    "name": "Twisted Knot Open Cuff",
-    "category": "Bracelets",
-    "style": "tarnish",
-    "price": 1250,
-    "material": "304 Stainless Steel, Gold Finish",
-    "image": "/products/kan-047-1.jpg",
-    "gallery": [
-      "/products/kan-047-1.jpg"
-    ],
-    "description": "A clean open cuff with sculpted twists and a long oval centre.",
-    "featured": false,
-    "tags": []
-  },
-  {
     "id": "kan-048",
     "name": "Triple Bezel Drop Necklace",
     "category": "Necklaces",
@@ -238,51 +133,6 @@ export const products = [
     "tags": []
   },
   {
-    "id": "kan-050",
-    "name": "Teardrop Crystal Solitaire Necklace",
-    "category": "Necklaces",
-    "style": "tarnish",
-    "price": 1250,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-050-1.jpg",
-    "gallery": [
-      "/products/kan-050-1.jpg"
-    ],
-    "description": "A single teardrop crystal on a fine gold chain that sits at the collarbone.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-051",
-    "name": "Clover and Pearl Necklace",
-    "category": "Necklaces",
-    "style": "tarnish",
-    "price": 1350,
-    "material": "304 Stainless Steel, Gold Finish, Pearl-effect Bead",
-    "image": "/products/kan-051-1.jpg",
-    "gallery": [
-      "/products/kan-051-1.jpg"
-    ],
-    "description": "A polished gold clover with a black centre stone, paired with a soft pearl.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-052",
-    "name": "Marquise Leaf Pendant Necklace",
-    "category": "Necklaces",
-    "style": "tarnish",
-    "price": 1250,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-052-1.jpg",
-    "gallery": [
-      "/products/kan-052-1.jpg"
-    ],
-    "description": "Two marquise crystals form a small leaf on a fine box chain.",
-    "featured": false,
-    "tags": []
-  },
-  {
     "id": "kan-053",
     "name": "Halo Teardrop Pendant Necklace",
     "category": "Necklaces",
@@ -309,36 +159,6 @@ export const products = [
       "/products/kan-054-1.jpg"
     ],
     "description": "Tiny gold rosebuds spaced along a fine chain for a light, romantic look.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-055",
-    "name": "Bezel Crystal Station Necklace",
-    "category": "Necklaces",
-    "style": "tarnish",
-    "price": 3650,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-055-1.jpg",
-    "gallery": [
-      "/products/kan-055-1.jpg"
-    ],
-    "description": "Crystals set evenly along the chain with a long centre drop.",
-    "featured": false,
-    "tags": []
-  },
-  {
-    "id": "kan-056",
-    "name": "Fan Halo Pendant Necklace",
-    "category": "Necklaces",
-    "style": "tarnish",
-    "price": 2800,
-    "material": "304 Stainless Steel, Gold Finish, Crystal",
-    "image": "/products/kan-056-1.jpg",
-    "gallery": [
-      "/products/kan-056-1.jpg"
-    ],
-    "description": "A fan-shaped pendant outlined in crystals around a bright centre stone.",
     "featured": false,
     "tags": []
   },
@@ -1826,6 +1646,135 @@ export const products = [
       "/products/kan-142-1.jpg"
     ],
     "description": "Pearl Dew, anti-tarnish stainless steel earrings with clear sparkling stones in a gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-143",
+    "name": "Solstice Sun & Moon Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 1190,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
+    "image": "/products/kan-143-1.jpg",
+    "gallery": [
+      "/products/kan-143-1.jpg",
+      "/products/kan-143-2.jpg"
+    ],
+    "description": "An open ring pairing a radiant sun with a crescent moon in a warm gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-144",
+    "name": "Celia Zircon Petal Ring",
+    "category": "Rings",
+    "style": "tarnish",
+    "price": 2260,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
+    "image": "/products/kan-144-1.jpg",
+    "gallery": [
+      "/products/kan-144-1.jpg"
+    ],
+    "description": "An adjustable flower ring with sparkling zircon petals in a gold finish.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-145",
+    "name": "Marigold Tassel Drop",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 790,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Marquise Zirconia",
+    "image": "/products/kan-145-1.jpg",
+    "gallery": [
+      "/products/kan-145-1.jpg",
+      "/products/kan-145-2.jpg",
+      "/products/kan-145-3.jpg"
+    ],
+    "description": "Hollow circle studs with a delicate chain tassel and marquise zirconia drop.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-146",
+    "name": "Seraphina Pearl Huggie",
+    "category": "Earrings",
+    "style": "tarnish",
+    "price": 660,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Shell Pearl, Zircon",
+    "image": "/products/kan-146-1.jpg",
+    "gallery": [
+      "/products/kan-146-1.jpg",
+      "/products/kan-146-2.jpg",
+      "/products/kan-146-3.jpg"
+    ],
+    "description": "Gold huggie hoops with a shell pearl drop crowned by tiny zircon stones.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-147",
+    "name": "Cherry Blossom Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1790,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Cubic Zirconia",
+    "image": "/products/kan-147-1.jpg",
+    "gallery": [
+      "/products/kan-147-1.jpg",
+      "/products/kan-147-2.jpg",
+      "/products/kan-147-3.jpg"
+    ],
+    "description": "A dainty beaded chain hung with clear cubic zirconia cherry charms.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-148",
+    "name": "Rhinestone Spacer Necklace",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 2260,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Rhinestone",
+    "image": "/products/kan-148-1.jpg",
+    "gallery": [
+      "/products/kan-148-1.jpg",
+      "/products/kan-148-2.jpg",
+      "/products/kan-148-3.jpg"
+    ],
+    "description": "A classic pendant necklace with rhinestones and smooth gold spacer beads.",
+    "featured": false,
+    "tags": [
+      "new"
+    ]
+  },
+  {
+    "id": "kan-149",
+    "name": "Zircon Round Solitaire Chain",
+    "category": "Necklaces",
+    "style": "tarnish",
+    "price": 1660,
+    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, White Zircon",
+    "image": "/products/kan-149-1.jpg",
+    "gallery": [
+      "/products/kan-149-1.jpg",
+      "/products/kan-149-2.jpg"
+    ],
+    "description": "A fine gold chain with a single round white zircon solitaire pendant.",
     "featured": false,
     "tags": [
       "new"
