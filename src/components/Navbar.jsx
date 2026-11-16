@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Search, ShoppingBag, User, Heart, X, ChevronDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import { styles } from "../data/products";
 
 const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets"];
 
@@ -80,33 +79,20 @@ export default function Navbar() {
             </NavLink>
 
             {shopOpen && (
-              <div className="absolute left-1/2 top-full w-[600px] -translate-x-1/2 rounded-sm border border-ink/10 bg-panel p-7 shadow-xl">
-                <div className="grid grid-cols-2 gap-8">
-                  {styles.map((st) => (
-                    <div key={st.key}>
+              <div className="absolute left-1/2 top-full w-56 -translate-x-1/2 rounded-sm border border-ink/10 bg-panel p-7 shadow-xl">
+                <ul className="space-y-2.5">
+                  {menuCategories.map((c) => (
+                    <li key={c}>
                       <Link
-                        to={`/shop?style=${st.key}`}
+                        to={`/shop?category=${c}`}
                         onClick={() => setShopOpen(false)}
-                        className="block whitespace-nowrap border-b border-ink/10 pb-3 font-display text-lg leading-snug text-pearl transition-colors hover:text-gold"
+                        className="text-xs uppercase tracking-[0.15em] text-mist transition-colors hover:text-gold"
                       >
-                        {st.label}
+                        {c}
                       </Link>
-                      <ul className="mt-4 space-y-2.5">
-                        {menuCategories.map((c) => (
-                          <li key={c}>
-                            <Link
-                              to={`/shop?style=${st.key}&category=${c}`}
-                              onClick={() => setShopOpen(false)}
-                              className="text-xs uppercase tracking-[0.15em] text-mist transition-colors hover:text-gold"
-                            >
-                              {c}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
                 <Link
                   to="/shop"
                   className="underline-grow mt-5 block text-center text-xs uppercase tracking-[0.15em] text-gold"
@@ -184,16 +170,6 @@ export default function Navbar() {
               Shop
             </NavLink>
             <div className="mb-1 flex flex-col border-l border-ink/10 pl-4">
-              {styles.map((st) => (
-                <Link
-                  key={st.key}
-                  to={`/shop?style=${st.key}`}
-                  onClick={() => setOpen(false)}
-                  className="py-2.5 font-sans text-xs uppercase tracking-[0.12em] text-mist"
-                >
-                  {st.label}
-                </Link>
-              ))}
               {menuCategories.map((c) => (
                 <Link
                   key={c}
