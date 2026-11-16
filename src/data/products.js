@@ -13,22 +13,6 @@ const img = (id, w = 800, h = 1000) =>
 
 export const products = [
   {
-    "id": "kan-005",
-    "name": "Rose Gold Chain-Link Ring",
-    "category": "Rings",
-    "price": 5950,
-    "material": "Rose Gold Plated Brass",
-    "image": "/products/kan-005-1.jpg",
-    "gallery": [
-      "/products/kan-005-1.jpg",
-      "/products/kan-005-2.jpg",
-      "/products/kan-005-3.jpg"
-    ],
-    "description": "A sculpted chain-link band in rose gold tone with an adjustable open back.",
-    "featured": false,
-    "tags": []
-  },
-  {
     "id": "kan-020",
     "name": "Coral Shell Chip Necklace",
     "category": "Necklaces",
