@@ -22,7 +22,7 @@ export default function Contact() {
       "",
       f.get("message"),
     ].filter((l) => l !== null).join("\n");
-    window.open(`https://wa.me/${phoneDigits}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    window.open(`https://wa.me/${phoneDigits}000?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     setSent(true);
   };
 
