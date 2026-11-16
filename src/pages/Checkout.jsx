@@ -35,7 +35,7 @@ const whatsappUrl = (order) => {
     `*Total: ${formatPrice(order.total)}*`,
     ...(order.customer.notes ? [`Notes: ${order.customer.notes}`] : []),
   ];
-  return `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}000?text=${encodeURIComponent(lines.join("\n"))}`;
+  return `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(lines.join("\n"))}`;
 };
 
 function sendToSheet(order) {

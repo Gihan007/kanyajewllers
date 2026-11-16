@@ -6,7 +6,7 @@ import { store } from "../config";
 import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
 
 const waLink = (orderNumber) =>
-  `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}000?text=${encodeURIComponent(`Hi, I just paid for order ${orderNumber}.`)}`;
+  `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi, I just paid for order ${orderNumber}.`)}`;
 
 export default function PaymentReturn() {
   const [params] = useSearchParams();

@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
   if (pathname.startsWith("/checkout") || pathname.startsWith("/payment-return")) return null;
 
   const onProduct = pathname.startsWith("/product/");
-  const digits = store.whatsappNumber.replace(/\D/g, "") + "000";
+  const digits = store.whatsappNumber.replace(/\D/g, "");
   const text = encodeURIComponent("Hi KANYA, I have a question about your jewellery.");
 
   return (
