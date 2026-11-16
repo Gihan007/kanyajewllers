@@ -1,6 +1,6 @@
 // Writes public/prices.json so the order script can double-check every card payment amount against the real prices.
 import fs from "node:fs";
-import { products } from "../src/data/products.js";
+const products = JSON.parse(fs.readFileSync("public/qimati-catalog.json", "utf8"));
 import { store } from "../src/config.js";
 
 const prices = Object.fromEntries(products.map((p) => [p.id, p.price]));

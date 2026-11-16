@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Minus, Plus, ShieldCheck, Truck, Undo2, ZoomIn } from "lucide-react";
 import Lightbox from "../components/Lightbox";
 import { useToast } from "../context/ToastContext";
-import { getProductById, products, formatPrice } from "../data/products";
+import { allProducts, getProductById, formatPrice } from "../data/products";
 import { store } from "../config";
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
@@ -18,6 +18,7 @@ export default function ProductDetail() {
   const [added, setAdded] = useState(false);
   const [viewer, setViewer] = useState(false);
   const [showBar, setShowBar] = useState(false);
+  const [selectedVariantId, setSelectedVariantId] = useState("");
   const addRef = useRef(null);
   const toast = useToast();
 
@@ -47,7 +48,10 @@ export default function ProductDetail() {
     );
   }
 
-  const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const related = allProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const availableVariants = product.variants?.filter((variant) => variant.available) || [];
+  const selectedVariant = availableVariants.find((variant) => String(variant.id) === selectedVariantId) || availableVariants[0];
+  const variantOptions = (product.options || []).filter((option) => option.values?.length > 1);
 
   const handleAdd = () => {
     addItem(product, qty);
@@ -92,7 +96,7 @@ export default function ProductDetail() {
                     activeImage === i ? "border-gold" : "border-ink/16"
                   }`}
                 >
-                  <img src={img} alt="" className="h-full w-full object-cover" />
+                  <img src={img} onError={(event) => { event.currentTarget.style.display = "none"; }} alt="" className="h-full w-full object-cover" />
                 </button>
               ))}
             </div>
@@ -104,6 +108,7 @@ export default function ProductDetail() {
             <p className="mt-4 text-2xl text-pearl">{formatPrice(product.price)}</p>
             <p className="mt-2 text-sm text-mist">{product.material}</p>
             <p className="mt-6 max-w-lg leading-relaxed text-mist">{product.description}</p>
+            {variantOptions.length > 0 && <div className="mt-7 space-y-5">{variantOptions.map((option) => <fieldset key={option.name}><legend className="mb-2 text-sm font-medium text-pearl">{option.name}: <span className="font-normal text-mist">{selectedVariant?.options?.[option.position - 1] || option.values[0]}</span></legend><div className="flex flex-wrap gap-2">{option.values.map((value) => {const matching = availableVariants.find((variant) => variant.options?.[option.position - 1] === value);const chosen = (selectedVariant?.options?.[option.position - 1] || option.values[0]) === value;return <button key={value} type="button" disabled={!matching} aria-pressed={chosen} onClick={() => matching && setSelectedVariantId(String(matching.id))} className={`rounded-full border px-4 py-2 text-xs ${chosen ? "border-ink bg-ink text-white" : "border-ink/20 text-pearl"} disabled:opacity-40`}>{value}</button>;})}</div></fieldset>)}</div>}
 
             <div className="mt-8 flex items-center gap-4">
               <div className="flex items-center border border-ink/22">

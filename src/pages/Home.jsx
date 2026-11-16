@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { allProducts } from "../data/products";
 import { motion, MotionConfig, useScroll, useTransform } from "framer-motion";
 import LuxuryJewelry from "../components/LuxuryJewelry";
 import StoryBrand from "../components/StoryBrand";
@@ -30,6 +31,7 @@ const lineReveal = {
 export default function Home() {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
+  const featuredImport = allProducts.filter((p) => p.originalPrice).slice(-8);
 
   useEffect(() => {
     const v = videoRef.current;
@@ -149,6 +151,7 @@ export default function Home() {
       <LuxuryJewelry />
       <StoryBrand />
       <PhotoCollectionGrid />
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-10"><div className="mb-8 flex items-end justify-between"><div><p className="text-xs uppercase tracking-[0.2em] text-gold">Just added</p><h2 className="mt-2 font-display text-4xl text-pearl">More to discover</h2></div><Link to="/shop?source=qimati" className="text-xs uppercase tracking-wider text-gold underline">Browse all 2,500+ imported styles →</Link></div><div className="grid grid-cols-2 gap-4 sm:grid-cols-4">{featuredImport.map((p)=><Link key={p.id} to={`/product/${p.id}`} className="group"><img src={p.image} onError={(event) => { if(p.fallbackImage) event.currentTarget.src=p.fallbackImage; }} alt={p.name} className="aspect-[4/5] w-full rounded-lg object-cover transition-transform group-hover:scale-[1.02]"/><p className="mt-2 text-sm text-pearl">{p.name}</p><p className="mt-1 text-sm text-mist">{p.originalPrice ? `Rs. ${p.price.toLocaleString("en-LK")}` : `Rs. ${p.price.toLocaleString("en-LK")}`}</p></Link>)}</div></section>
 
       {/* CTA banner */}
       <section className="relative overflow-hidden border-t border-ink/10 bg-cream">

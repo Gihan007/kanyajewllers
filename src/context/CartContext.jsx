@@ -23,19 +23,20 @@ export function CartProvider({ children }) {
 
   const addItem = (product, qty = 1) => {
     setItems((prev) => {
-      const existing = prev.find((i) => i.id === product.id);
+      const itemKey = product.cartKey || product.id;
+      const existing = prev.find((i) => (i.cartKey || i.id) === itemKey);
       if (existing) {
-        return prev.map((i) => (i.id === product.id ? { ...i, qty: i.qty + qty } : i));
+        return prev.map((i) => (i.cartKey || i.id) === itemKey ? { ...i, qty: i.qty + qty } : i);
       }
-      return [...prev, { id: product.id, name: product.name, price: product.price, image: product.image, qty }];
+      return [...prev, { id: product.id, cartKey: itemKey, variantId: product.variantId, variantTitle: product.variantTitle, name: product.name, price: product.price, image: product.image, qty }];
     });
   };
 
-  const removeItem = (id) => setItems((prev) => prev.filter((i) => i.id !== id));
+  const removeItem = (id) => setItems((prev) => prev.filter((i) => (i.cartKey || i.id) !== id));
 
   const updateQty = (id, qty) => {
     if (qty <= 0) return removeItem(id);
-    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, qty } : i)));
+    setItems((prev) => prev.map((i) => ((i.cartKey || i.id) === id ? { ...i, qty } : i)));
   };
 
   const clearCart = () => setItems([]);

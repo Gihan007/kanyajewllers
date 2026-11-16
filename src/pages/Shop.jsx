@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductCard from "../components/ProductCard";
-import { categories, products, styles } from "../data/products";
+import { allProducts, categories, styles } from "../data/products";
 
 const sorters = {
   featured: (a, b) => Number(b.featured) - Number(a.featured),
@@ -13,15 +13,17 @@ const sorters = {
 export default function Shop() {
   const [params, setParams] = useSearchParams();
   const activeCategory = params.get("category") || "All";
+  const source = params.get("source") || "all";
   const activeStyle = styles.find((s) => s.key === params.get("style"));
   const [sort, setSort] = useState("featured");
 
   const filtered = useMemo(() => {
-    let list = [...products];
+    let list = [...allProducts];
+    if (source === "qimati") list = list.filter((p) => Boolean(p.originalPrice));
     if (activeStyle) list = list.filter((p) => p.style === activeStyle.key);
-    if (activeCategory !== "All") list = list.filter((p) => p.category === activeCategory);
+    if (activeCategory !== "All") list = list.filter((p) => activeCategory === "Bracelets" ? p.category.toLowerCase().includes("bracelet") : p.category.toLowerCase().includes(activeCategory.toLowerCase()));
     return list.sort(sorters[sort]);
-  }, [activeCategory, activeStyle, sort]);
+  }, [activeCategory, activeStyle, sort, source]);
 
   const clearStyle = () => {
     params.delete("style");
@@ -49,10 +51,15 @@ export default function Shop() {
               </button>
             )}
           </p>
-          <h1 className="mt-2 font-display text-5xl text-pearl">Shop Jewellery</h1>
+          <h1 className="mt-2 font-display text-5xl text-pearl">{activeCategory === "All" ? "Shop Jewellery" : activeCategory}</h1>
+          <p className="mt-3 max-w-2xl text-sm text-mist">{filtered.length.toLocaleString("en-IN")} designs available</p>
         </motion.div>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-wrap gap-2">
+          {[{ key: "all", label: "All products" }, { key: "qimati", label: "Full imported catalogue" }].map((option) => <button key={option.key} onClick={() => { if (option.key === "all") params.delete("source"); else params.set("source", option.key); setParams(params); }} className={`rounded-full border px-4 py-2 text-xs uppercase tracking-wider ${source === option.key ? "border-gold bg-gold/10 text-gold" : "border-ink/16 text-mist"}`}>{option.label}</button>)}
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-2">
             {categories.map((c) => (
               <button
@@ -80,7 +87,8 @@ export default function Shop() {
           </select>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-4 text-sm text-mist">Showing {filtered.length.toLocaleString("en-IN")} products</div>
+        <div className="mt-4 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
           {filtered.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useToast } from "../context/ToastContext";
 import { Plus } from "lucide-react";
@@ -6,6 +6,7 @@ import { formatPrice } from "../data/products";
 
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
+  const navigate = useNavigate();
   const toast = useToast();
 
   return (
@@ -15,9 +16,10 @@ export default function ProductCard({ product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
+          onError={(event) => { if (product.fallbackImage && event.currentTarget.src !== new URL(product.fallbackImage, window.location.href).href) event.currentTarget.src = product.fallbackImage; }}
           className="h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
         />
-        {product.gallery?.[1] && (
+        {product.gallery?.[1] && product.gallery[1] !== product.image && (
           <img
             src={product.gallery[1]}
             alt=""

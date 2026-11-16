@@ -37,3 +37,6 @@ WhatsApp Video*.mp4
 # local secrets
 .env
 .env.*
+
+# Source-only remote catalog export
+public/qimati-catalog-source.json

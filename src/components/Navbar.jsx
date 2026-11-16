@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Search, ShoppingBag, User, Heart, X, ChevronDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
-const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets"];
+const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets", "Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories"];
 
 const simpleLinks = [
   { to: "/build-your-story", label: "Build Your Story" },
@@ -99,6 +99,7 @@ export default function Navbar() {
                 >
                   View All Jewellery →
                 </Link>
+                <Link to="/shop?source=qimati" onClick={() => setShopOpen(false)} className="mt-3 block text-center text-[10px] uppercase tracking-[0.13em] text-mist hover:text-gold">Browse full imported catalogue</Link>
               </div>
             )}
           </div>

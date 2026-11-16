@@ -383,11 +383,11 @@ export default function Checkout() {
           <h2 className="font-display text-2xl text-pearl">Order Summary</h2>
           <div className="mt-6 space-y-4">
             {lines.map((item) => (
-              <div key={item.id} className="flex items-center gap-4">
+              <div key={item.cartKey || item.id} className="flex items-center gap-4">
                 <img src={item.image} alt={item.name} className="h-16 w-16 rounded-lg object-cover" />
                 <div className="flex-1">
                   <p className="text-sm text-pearl">{item.name}</p>
-                  <p className="text-xs text-mist">Qty {item.qty}</p>
+                  <p className="text-xs text-mist">{item.variantTitle && item.variantTitle !== "Default Title" ? `${item.variantTitle} ? ` : ""}Qty {item.qty}</p>
                 </div>
                 <p className="text-sm text-pearl">{formatPrice(item.lineTotal)}</p>
               </div>

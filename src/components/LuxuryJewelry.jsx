@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import LuxuryProductCard from "./LuxuryProductCard";
-import { products } from "../data/products";
+import { allProducts as products } from "../data/products";
 
 const tabs = [
   { key: "new", label: "New Arrived" },

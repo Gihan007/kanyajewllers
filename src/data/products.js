@@ -1,5 +1,5 @@
 // Product photos live in /public/products. Prices are in LKR.
-export const categories = ["All", "Rings", "Necklaces", "Earrings", "Bracelets", "Anklets"];
+export const categories = ["All", "Rings", "Necklaces", "Earrings", "Bracelets", "Anklets", "Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"];
 
 export const styles = [
   { key: "bohemian", label: "Bohemian" },
@@ -1752,4 +1752,7 @@ export const heroImage = img("1697380582263-ba9f5ef8cefa", 900, 1100);
 export const lifestyleImage = img("1610214354095-684029c14300", 800, 900);
 export const ringsHeroImage = img("1551346261-e19dd7ae9587", 900, 1100);
 
-export const getProductById = (id) => products.find((p) => p.id === id);
+import qimatiCatalog from "../../public/qimati-catalog.json";
+import qimatiVariants from "../../public/qimati-variants.json";
+export const allProducts = [...products, ...qimatiCatalog.filter((q) => !products.some((p) => p.id === q.id)).map((p) => ({ ...p, fallbackImage: p.image, variants: qimatiVariants[p.id]?.variants || [], options: qimatiVariants[p.id]?.options || [] }))];
+export const getProductById = (id) => allProducts.find((p) => p.id === id);

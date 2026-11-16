@@ -6,11 +6,11 @@ import { formatPrice } from "../data/products";
 function QtyStepper({ item, updateQty }) {
   return (
     <div className="flex items-center border border-ink/22">
-      <button onClick={() => updateQty(item.id, item.qty - 1)} className="p-2.5 text-mist hover:text-gold" aria-label="Decrease">
+      <button onClick={() => updateQty(item.cartKey || item.id, item.qty - 1)} className="p-2.5 text-mist hover:text-gold" aria-label="Decrease">
         <Minus size={14} />
       </button>
       <span className="w-8 text-center text-pearl">{item.qty}</span>
-      <button onClick={() => updateQty(item.id, item.qty + 1)} className="p-2.5 text-mist hover:text-gold" aria-label="Increase">
+      <button onClick={() => updateQty(item.cartKey || item.id, item.qty + 1)} className="p-2.5 text-mist hover:text-gold" aria-label="Increase">
         <Plus size={14} />
       </button>
     </div>
@@ -39,7 +39,7 @@ export default function Cart() {
 
         <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
           {items.map((item) => (
-            <div key={item.id} className="glass rounded-2xl border border-ink/16 p-4">
+            <div key={item.cartKey || item.id} className="glass rounded-2xl border border-ink/16 p-4">
               <div className="flex gap-4">
                 <img src={item.image} alt={item.name} className="h-20 w-20 flex-shrink-0 rounded-xl object-cover sm:h-24 sm:w-24" />
 
@@ -47,10 +47,10 @@ export default function Cart() {
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
                       <p className="font-display text-lg leading-snug text-pearl">{item.name}</p>
-                      <p className="mt-1 text-sm text-mist">{formatPrice(item.price)}</p>
+                      <p className="mt-1 text-sm text-mist">{formatPrice(item.price)}</p>{item.variantTitle && item.variantTitle !== "Default Title" && <p className="mt-1 text-xs text-mist">{item.variantTitle}</p>}
                     </div>
                     <button
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeItem(item.cartKey || item.id)}
                       className="-mr-2 -mt-2 flex-shrink-0 p-2 text-mist hover:text-red-400 sm:hidden"
                       aria-label={`Remove ${item.name}`}
                     >
@@ -67,7 +67,7 @@ export default function Cart() {
                 <div className="hidden items-center gap-5 sm:flex">
                   <QtyStepper item={item} updateQty={updateQty} />
                   <p className="w-24 text-right text-pearl">{formatPrice(item.price * item.qty)}</p>
-                  <button onClick={() => removeItem(item.id)} className="p-1 text-mist hover:text-red-400" aria-label={`Remove ${item.name}`}>
+                  <button onClick={() => removeItem(item.cartKey || item.id)} className="p-1 text-mist hover:text-red-400" aria-label={`Remove ${item.name}`}>
                     <Trash2 size={18} />
                   </button>
                 </div>

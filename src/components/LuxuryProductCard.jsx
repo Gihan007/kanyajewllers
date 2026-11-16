@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { formatPrice } from "../data/products";
 
@@ -10,6 +10,7 @@ const badgeStyles = {
 
 export default function LuxuryProductCard({ product }) {
   const { addItem } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div className="group border border-ink/10 bg-panel transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(47,66,55,0.35)]">
@@ -51,7 +52,7 @@ export default function LuxuryProductCard({ product }) {
           </p>
           <button
             type="button"
-            onClick={() => addItem(product)}
+            onClick={() => product.options?.some((option) => option.values?.length > 1) ? navigate(`/product/${product.id}`) : addItem(product)}
             className="whitespace-nowrap py-1 text-[11px] uppercase tracking-wider text-gold underline-grow"
           >
             Add to Bag
