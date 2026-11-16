@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Search, ShoppingBag, User, Heart, X, ChevronDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
-const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets", "Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories"];
+const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets"];
 
 const simpleLinks = [
   { to: "/build-your-story", label: "Build Your Story" },
