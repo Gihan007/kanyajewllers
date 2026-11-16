@@ -4,7 +4,9 @@ import { MessageCircle, Check, Loader2, X, FileDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { store } from "../config";
 import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
-import { useToast } from "../context/ToastContext";
+
+const waLink = (orderNumber) =>
+  `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}000?text=${encodeURIComponent(`Hi, I just paid for order ${orderNumber}.`)}`;
 
 export default function PaymentReturn() {
   const [params] = useSearchParams();
@@ -13,7 +15,6 @@ export default function PaymentReturn() {
   const [status, setStatus] = useState("checking");
   const [pdfBusy, setPdfBusy] = useState(false);
   const tries = useRef(0);
-  const toast = useToast();
 
   // the order was saved in this browser tab before the customer went to PayHere
   let savedOrder = null;
@@ -87,13 +88,14 @@ export default function PaymentReturn() {
           </button>
         )}
         {orderNumber && status !== "failed" && (
-          <button
-            type="button"
-            onClick={() => toast({ title: "Can't reach this number right now", text: "Please try again shortly." })}
+          <a
+            href={waLink(orderNumber)}
+            target="_blank"
+            rel="noreferrer"
             className="btn-dark mt-8 inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm uppercase tracking-wider"
           >
             <MessageCircle size={18} /> Message us on WhatsApp
-          </button>
+          </a>
         )}
         <div className="mt-8">
           <Link to={status === "failed" ? "/checkout" : "/shop"} className="text-xs uppercase tracking-[0.2em] text-mist underline hover:text-pearl">
