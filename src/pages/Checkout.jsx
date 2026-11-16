@@ -5,6 +5,7 @@ import { useCart } from "../context/CartContext";
 import { formatPrice, getProductById } from "../data/products";
 import { store, ordersOpen, paymentMethods } from "../config";
 import { downloadOrderSlipPdf } from "../lib/orderSlipPdf";
+import { useToast } from "../context/ToastContext";
 
 const inputClass =
   "w-full rounded-lg border border-ink/16 bg-panel px-4 py-3 text-sm text-pearl placeholder:text-mist/50 outline-none focus:border-gold";
@@ -16,26 +17,6 @@ const makeOrderNumber = () => {
   const pad = (n) => String(n).padStart(2, "0");
   const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
   return `KJ-${String(d.getFullYear()).slice(2)}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${rand}`;
-};
-
-const whatsappUrl = (order) => {
-  const lines = [
-    `*New order ${order.orderNumber}*`,
-    `Name: ${order.customer.name}`,
-    `Phone: ${order.customer.phone}`,
-    ...(order.customer.email ? [`Email: ${order.customer.email}`] : []),
-    `Address: ${order.customer.address}, ${order.customer.city}${order.customer.postalCode ? " " + order.customer.postalCode : ""}`,
-    `Payment: ${order.payment}`,
-    "",
-    "Items:",
-    ...order.items.map((i) => `${i.qty} x ${i.name} - ${formatPrice(i.lineTotal)}`),
-    "",
-    `Subtotal: ${formatPrice(order.subtotal)}`,
-    `Shipping: ${order.shipping === 0 ? "Free" : formatPrice(order.shipping)}`,
-    `*Total: ${formatPrice(order.total)}*`,
-    ...(order.customer.notes ? [`Notes: ${order.customer.notes}`] : []),
-  ];
-  return `https://wa.me/${store.whatsappNumber.replace(/\D/g, "")}000?text=${encodeURIComponent(lines.join("\n"))}`;
 };
 
 function sendToSheet(order) {
@@ -100,6 +81,7 @@ function submitToPayHere(order, data) {
 function Confirmation({ order }) {
   const bank = order.payment === "Bank transfer";
   const [pdfBusy, setPdfBusy] = useState(false);
+  const toast = useToast();
   const downloadPdf = async () => {
     setPdfBusy(true);
     try {
@@ -124,14 +106,13 @@ function Confirmation({ order }) {
             <span className="text-gold">Next step:</span> tap the button below and press <strong>Send</strong> in
             WhatsApp so we can confirm your order. If WhatsApp did not open on its own, use the button.
           </p>
-          <a
-            href={whatsappUrl(order)}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => toast({ title: "Can't reach this number right now", text: "Please try again shortly." })}
             className="btn-dark mt-5 flex w-full items-center justify-center gap-2 py-3.5 text-sm uppercase tracking-wider"
           >
             <MessageCircle size={18} /> Send order on WhatsApp
-          </a>
+          </button>
           <button
             type="button"
             onClick={downloadPdf}
@@ -250,7 +231,6 @@ export default function Checkout() {
     }
 
     sendToSheet(order);
-    window.open(whatsappUrl(order), "_blank");
     try {
       sessionStorage.setItem(LAST_ORDER_KEY, JSON.stringify(order));
     } catch {
