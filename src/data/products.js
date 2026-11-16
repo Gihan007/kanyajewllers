@@ -1636,24 +1636,6 @@ export const products = [
     ]
   },
   {
-    "id": "kan-143",
-    "name": "Solstice Sun & Moon Ring",
-    "category": "Rings",
-    "style": "tarnish",
-    "price": 1190,
-    "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
-    "image": "/products/kan-143-1.jpg",
-    "gallery": [
-      "/products/kan-143-1.jpg",
-      "/products/kan-143-2.jpg"
-    ],
-    "description": "An open ring pairing a radiant sun with a crescent moon in a warm gold finish.",
-    "featured": false,
-    "tags": [
-      "new"
-    ]
-  },
-  {
     "id": "kan-144",
     "name": "Celia Zircon Petal Ring",
     "category": "Rings",
