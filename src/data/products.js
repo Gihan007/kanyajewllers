@@ -1753,6 +1753,11 @@ const removeRejectedImages = (product) => {
   return { ...product, gallery, image: gallery[0] || product.image };
 };
 const removedProductIds = new Set(["kan-106", "kan-107"]);
+const manuallyRemovedQimatiIds = new Set([
+  "bracelet-kada-713", "bracelet-kada-712", "bracelet-kada-711", "bracelet-kada-710", "bracelet-kada-709",
+  "bracelet-kada-705-small", "chain-bracelet-714", "chain-bracelet-713", "chain-bracelet-712",
+  "chain-bracelet-711", "chain-bracelet-706", "chain-bracelet-705", "chain-bracelet-704", "chain-bracelet-688",
+]);
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
 const legacyProducts = products.flatMap((product) => {
   const match = legacyQimatiMatches[product.id];
@@ -1767,6 +1772,6 @@ const legacyProducts = products.flatMap((product) => {
 
 export const allProducts = [...legacyProducts, ...qimatiCatalog.filter((q) => {
   const variants = qimatiVariants[q.id]?.variants || q.variants || [];
-  return !products.some((p) => p.id === q.id) && !excludedCategories.has(q.category) && variants.length > 0 && variants.every((variant) => variant.available);
+  return !products.some((p) => p.id === q.id) && !manuallyRemovedQimatiIds.has(q.id) && !excludedCategories.has(q.category) && variants.length > 0 && variants.every((variant) => variant.available);
 }).map((p) => ({ ...p, fallbackImage: p.image, variants: qimatiVariants[p.id]?.variants || [], options: qimatiVariants[p.id]?.options || [] }))];
 export const getProductById = (id) => allProducts.find((p) => p.id === id);
