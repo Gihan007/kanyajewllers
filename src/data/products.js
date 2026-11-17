@@ -1752,7 +1752,7 @@ const removeRejectedImages = (product) => {
   const gallery = product.gallery.filter((image) => !rejectedImageFiles.has(image.split("/").pop()));
   return { ...product, gallery, image: gallery[0] || product.image };
 };
-const removedProductIds = new Set(["kan-106", "kan-107"]);
+const removedProductIds = new Set(["kan-106", "kan-107", "kan-141"]);
 const manuallyRemovedQimatiIds = new Set([
   "bracelet-kada-713", "bracelet-kada-712", "bracelet-kada-711", "bracelet-kada-710", "bracelet-kada-709",
   "bracelet-kada-705-small", "chain-bracelet-714", "chain-bracelet-713", "chain-bracelet-712",
