@@ -28,7 +28,7 @@ const whatsappUrl = (order) => {
     `Payment: ${order.payment}`,
     "",
     "Items:",
-    ...order.items.map((i) => `${i.qty} x ${i.name} - ${formatPrice(i.lineTotal)}`),
+    ...order.items.map((i) => `${i.qty} x ${i.name}${i.variantTitle ? ` (${i.variantTitle})` : ""} - ${formatPrice(i.lineTotal)}`),
     "",
     `Subtotal: ${formatPrice(order.subtotal)}`,
     `Shipping: ${order.shipping === 0 ? "Free" : formatPrice(order.shipping)}`,
@@ -227,7 +227,7 @@ export default function Checkout() {
         notes: form.notes.trim(),
       },
       payment,
-      items: lines.map((l) => ({ id: l.id, name: l.name, qty: l.qty, unitPrice: l.unitPrice, lineTotal: l.lineTotal })),
+      items: lines.map((l) => ({ id: l.id, name: l.name, variantTitle: l.variantTitle, qty: l.qty, unitPrice: l.unitPrice, lineTotal: l.lineTotal })),
       subtotal,
       shipping,
       total,
@@ -387,7 +387,7 @@ export default function Checkout() {
                 <img src={item.image} alt={item.name} className="h-16 w-16 rounded-lg object-cover" />
                 <div className="flex-1">
                   <p className="text-sm text-pearl">{item.name}</p>
-                  <p className="text-xs text-mist">{item.variantTitle && item.variantTitle !== "Default Title" ? `${item.variantTitle} ? ` : ""}Qty {item.qty}</p>
+                  <p className="text-xs text-mist">{item.variantTitle && item.variantTitle !== "Default Title" ? `${item.variantTitle} · ` : ""}Qty {item.qty}</p>
                 </div>
                 <p className="text-sm text-pearl">{formatPrice(item.lineTotal)}</p>
               </div>

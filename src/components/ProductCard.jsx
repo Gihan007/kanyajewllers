@@ -32,11 +32,19 @@ export default function ProductCard({ product }) {
       <button
         type="button"
         onClick={() => {
-          addItem(product);
-          toast({ title: "Added to bag", text: product.name, image: product.image });
+          if (product.options?.some((option) => option.values?.length > 1)) {
+            navigate(`/product/${product.id}`);
+            return;
+          }
+          if (product.variants?.length && !product.variants.some((variant) => variant.available)) return;
+          const available = product.variants?.find((variant) => variant.available);
+          const item = available ? { ...product, cartKey: `${product.id}:${available.id}`, variantId: available.id, variantTitle: available.title } : product;
+          addItem(item);
+          toast({ title: "Added to bag", text: `${product.name}${available && available.title !== "Default Title" ? ` · ${available.title}` : ""}`, image: product.image });
         }}
         aria-label={`Add ${product.name} to cart`}
-        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-ink/70 text-gold backdrop-blur transition-all duration-300 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100 hover:bg-gold hover:text-ink"
+        disabled={product.variants?.length > 0 && !product.options?.some((option) => option.values?.length > 1) && !product.variants.some((variant) => variant.available)}
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-ink/70 text-gold backdrop-blur transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100 hover:bg-gold hover:text-ink"
       >
         <Plus size={18} />
       </button>

@@ -52,7 +52,14 @@ export default function LuxuryProductCard({ product }) {
           </p>
           <button
             type="button"
-            onClick={() => product.options?.some((option) => option.values?.length > 1) ? navigate(`/product/${product.id}`) : addItem(product)}
+            onClick={() => {
+              if (product.options?.some((option) => option.values?.length > 1)) navigate(`/product/${product.id}`);
+              else if (!product.variants?.length || product.variants.some((variant) => variant.available)) {
+                const available = product.variants?.find((variant) => variant.available);
+                addItem(available ? { ...product, cartKey: `${product.id}:${available.id}`, variantId: available.id, variantTitle: available.title } : product);
+              }
+            }}
+            disabled={product.variants?.length > 0 && !product.variants.some((variant) => variant.available)}
             className="whitespace-nowrap py-1 text-[11px] uppercase tracking-wider text-gold underline-grow"
           >
             Add to Bag

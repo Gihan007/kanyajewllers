@@ -1754,6 +1754,16 @@ export const ringsHeroImage = img("1551346261-e19dd7ae9587", 900, 1100);
 
 import qimatiCatalog from "../../public/qimati-catalog.json";
 import qimatiVariants from "../../public/qimati-variants.json";
+import legacyQimatiMatches from "../../public/qimati-legacy-matches.json";
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
-export const allProducts = [...products, ...qimatiCatalog.filter((q) => !products.some((p) => p.id === q.id) && !excludedCategories.has(q.category)).map((p) => ({ ...p, fallbackImage: p.image, variants: qimatiVariants[p.id]?.variants || [], options: qimatiVariants[p.id]?.options || [] }))];
+const legacyProducts = products.flatMap((product) => {
+  const match = legacyQimatiMatches[product.id];
+  if (match && !match.variants.some((variant) => variant.available)) return [];
+  return [{
+    ...product,
+    ...(match ? { variants: match.variants, options: match.options, qimatiHandle: match.handle, stockChecked: true } : {}),
+  }];
+});
+
+export const allProducts = [...legacyProducts, ...qimatiCatalog.filter((q) => !products.some((p) => p.id === q.id) && !excludedCategories.has(q.category)).map((p) => ({ ...p, fallbackImage: p.image, variants: qimatiVariants[p.id]?.variants || [], options: qimatiVariants[p.id]?.options || [] }))];
 export const getProductById = (id) => allProducts.find((p) => p.id === id);

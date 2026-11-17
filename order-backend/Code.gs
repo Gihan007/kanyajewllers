@@ -74,7 +74,7 @@ function doGet(e) {
 // ---- order saving and emails -------------------------------------------------------------------
 
 function itemsText(order) {
-  return order.items.map((i) => i.qty + ' x ' + i.name + ' (' + i.id + ') @ ' + i.unitPrice).join('\n');
+  return order.items.map((i) => i.qty + ' x ' + i.name + (i.variantTitle ? ' - ' + i.variantTitle : '') + ' (' + i.id + ') @ ' + i.unitPrice).join('\n');
 }
 
 function appendOrderRow(order, status, slipUrl) {
@@ -420,7 +420,7 @@ function createOrderSlip(order, status) {
   addHeading(body, 'Order details');
   const rows = [['#', 'Product', 'Code', 'Qty', 'Unit price', 'Line total']];
   order.items.forEach(function (i, n) {
-    rows.push([String(n + 1), text(i.name), text(i.id), String(Number(i.qty) || 0), money(i.unitPrice), money(i.lineTotal)]);
+    rows.push([String(n + 1), text(i.variantTitle ? i.name + ' - ' + i.variantTitle : i.name), text(i.id), String(Number(i.qty) || 0), money(i.unitPrice), money(i.lineTotal)]);
   });
   rows.push(['', '', '', '', 'Subtotal', money(order.subtotal)]);
   rows.push(['', '', '', '', 'Shipping', Number(order.shipping) === 0 ? 'Free' : money(order.shipping)]);

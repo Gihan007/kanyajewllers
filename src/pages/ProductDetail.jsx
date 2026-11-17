@@ -18,9 +18,14 @@ export default function ProductDetail() {
   const [added, setAdded] = useState(false);
   const [viewer, setViewer] = useState(false);
   const [showBar, setShowBar] = useState(false);
-  const [selectedVariantId, setSelectedVariantId] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState({});
   const addRef = useRef(null);
   const toast = useToast();
+  const availableVariants = product?.variants?.filter((variant) => variant.available) || [];
+  const variantOptions = (product?.options || []).filter((option) => option.values?.length > 1);
+  const selectedVariant = availableVariants.find((variant) =>
+    variantOptions.every((option) => !selectedOptions[option.position] || variant.options?.[option.position - 1] === selectedOptions[option.position])
+  ) || availableVariants[0];
 
   // Show the sticky bottom bar once the main "Add to Bag" button has scrolled out of view.
   useEffect(() => {
@@ -49,13 +54,32 @@ export default function ProductDetail() {
   }
 
   const related = allProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
-  const availableVariants = product.variants?.filter((variant) => variant.available) || [];
-  const selectedVariant = availableVariants.find((variant) => String(variant.id) === selectedVariantId) || availableVariants[0];
-  const variantOptions = (product.options || []).filter((option) => option.values?.length > 1);
+
+  useEffect(() => {
+    const firstAvailable = product?.variants?.find((variant) => variant.available);
+    setSelectedOptions(firstAvailable ? Object.fromEntries((product.options || []).map((option) => [option.position, firstAvailable.options?.[option.position - 1]])) : {});
+    setQty(1);
+    setActiveImage(0);
+  }, [id]);
+
+  const chooseOption = (option, value) => {
+    const next = { ...selectedOptions, [option.position]: value };
+    const match = availableVariants.find((variant) => variant.options?.[option.position - 1] === value &&
+      variantOptions.every((other) => other.position === option.position || !next[other.position] || variant.options?.[other.position - 1] === next[other.position]));
+    const chosen = match || availableVariants.find((variant) => variant.options?.[option.position - 1] === value);
+    setSelectedOptions(chosen ? Object.fromEntries((product.options || []).map((entry) => [entry.position, chosen.options?.[entry.position - 1]])) : next);
+  };
 
   const handleAdd = () => {
-    addItem(product, qty);
-    toast({ title: "Added to bag", text: `${product.name}${qty > 1 ? ` × ${qty}` : ""}`, image: product.image });
+    if (!selectedVariant) return;
+    const selectedProduct = variantOptions.length ? {
+      ...product,
+      cartKey: `${product.id}:${selectedVariant.id}`,
+      variantId: selectedVariant.id,
+      variantTitle: selectedVariant.title,
+    } : product;
+    addItem(selectedProduct, qty);
+    toast({ title: "Added to bag", text: `${product.name}${variantOptions.length ? ` · ${selectedVariant.title}` : ""}${qty > 1 ? ` × ${qty}` : ""}`, image: product.image });
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   };
@@ -108,7 +132,7 @@ export default function ProductDetail() {
             <p className="mt-4 text-2xl text-pearl">{formatPrice(product.price)}</p>
             <p className="mt-2 text-sm text-mist">{product.material}</p>
             <p className="mt-6 max-w-lg leading-relaxed text-mist">{product.description}</p>
-            {variantOptions.length > 0 && <div className="mt-7 space-y-5">{variantOptions.map((option) => <fieldset key={option.name}><legend className="mb-2 text-sm font-medium text-pearl">{option.name}: <span className="font-normal text-mist">{selectedVariant?.options?.[option.position - 1] || option.values[0]}</span></legend><div className="flex flex-wrap gap-2">{option.values.map((value) => {const matching = availableVariants.find((variant) => variant.options?.[option.position - 1] === value);const chosen = (selectedVariant?.options?.[option.position - 1] || option.values[0]) === value;return <button key={value} type="button" disabled={!matching} aria-pressed={chosen} onClick={() => matching && setSelectedVariantId(String(matching.id))} className={`rounded-full border px-4 py-2 text-xs ${chosen ? "border-ink bg-ink text-white" : "border-ink/20 text-pearl"} disabled:opacity-40`}>{value}</button>;})}</div></fieldset>)}</div>}
+            {variantOptions.length > 0 && <div className="mt-7 space-y-5">{variantOptions.map((option) => <fieldset key={option.name}><legend className="mb-2 text-sm font-medium text-pearl">{option.name}: <span className="font-normal text-mist">{selectedOptions[option.position] || selectedVariant?.options?.[option.position - 1] || option.values[0]}</span></legend><div className="flex flex-wrap gap-2">{option.values.map((value) => {const matching = product.variants?.some((variant) => variant.available && variant.options?.[option.position - 1] === value);const chosen = (selectedOptions[option.position] || selectedVariant?.options?.[option.position - 1] || option.values[0]) === value;return <button key={value} type="button" disabled={!matching} aria-pressed={chosen} onClick={() => chooseOption(option, value)} className={`rounded-full border px-4 py-2 text-xs ${chosen ? "border-ink bg-ink text-white" : "border-ink/20 text-pearl"} disabled:cursor-not-allowed disabled:opacity-40`}>{value}{!matching ? " · Sold out" : ""}</button>;})}</div></fieldset>)}</div>}
 
             <div className="mt-8 flex items-center gap-4">
               <div className="flex items-center border border-ink/22">
@@ -129,8 +153,8 @@ export default function ProductDetail() {
                 </button>
               </div>
 
-              <button ref={addRef} onClick={handleAdd} className="btn-dark flex-1 py-3.5 text-sm uppercase tracking-wider">
-                {added ? "Added to Bag ✓" : "Add to Bag"}
+              <button ref={addRef} onClick={handleAdd} disabled={!selectedVariant} className="btn-dark flex-1 py-3.5 text-sm uppercase tracking-wider disabled:cursor-not-allowed disabled:opacity-50">
+                {!selectedVariant ? "Sold Out" : added ? "Added to Bag ✓" : "Add to Bag"}
               </button>
             </div>
 
@@ -179,10 +203,11 @@ export default function ProductDetail() {
           <button
             type="button"
             onClick={handleAdd}
+            disabled={!selectedVariant}
             tabIndex={showBar ? 0 : -1}
-            className="btn-dark px-6 py-3 text-xs uppercase tracking-wider"
+            className="btn-dark px-6 py-3 text-xs uppercase tracking-wider disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {added ? "Added ✓" : "Add to Bag"}
+            {!selectedVariant ? "Sold Out" : added ? "Added ✓" : "Add to Bag"}
           </button>
         </div>
       </div>
