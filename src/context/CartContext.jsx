@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { allProducts } from "../data/products";
 
 const CartContext = createContext(null);
 const STORAGE_KEY = "kanya-cart";
@@ -7,7 +8,15 @@ export function CartProvider({ children }) {
   const [items, setItems] = useState(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      if (!raw) return [];
+      const catalog = new Map(allProducts.map((product) => [product.id, product]));
+      return JSON.parse(raw).flatMap((item) => {
+        const product = catalog.get(item.id);
+        if (!product) return [];
+        const variant = product.variants?.find((entry) => String(entry.id) === String(item.variantId));
+        if (item.variantId && (!variant || !variant.available)) return [];
+        return [{ ...item, name: product.name, price: product.price, image: product.image }];
+      });
     } catch {
       return [];
     }
