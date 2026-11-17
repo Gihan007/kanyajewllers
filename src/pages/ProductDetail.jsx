@@ -21,6 +21,13 @@ export default function ProductDetail() {
   const [selectedOptions, setSelectedOptions] = useState({});
   const addRef = useRef(null);
   const toast = useToast();
+  useEffect(() => {
+    if (!product) return;
+    const firstAvailable = product.variants?.find((variant) => variant.available);
+    setSelectedOptions(firstAvailable ? Object.fromEntries((product.options || []).map((option) => [option.position, firstAvailable.options?.[option.position - 1]])) : {});
+    setQty(1);
+    setActiveImage(0);
+  }, [id, product]);
   const availableVariants = product?.variants?.filter((variant) => variant.available) || [];
   const variantOptions = (product?.options || []).filter((option) => option.values?.length > 1);
   const selectedVariant = availableVariants.find((variant) =>
@@ -54,13 +61,6 @@ export default function ProductDetail() {
   }
 
   const related = allProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
-
-  useEffect(() => {
-    const firstAvailable = product?.variants?.find((variant) => variant.available);
-    setSelectedOptions(firstAvailable ? Object.fromEntries((product.options || []).map((option) => [option.position, firstAvailable.options?.[option.position - 1]])) : {});
-    setQty(1);
-    setActiveImage(0);
-  }, [id]);
 
   const chooseOption = (option, value) => {
     const next = { ...selectedOptions, [option.position]: value };
