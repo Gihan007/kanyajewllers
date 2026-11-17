@@ -171,8 +171,7 @@ export const products = [
     "image": "/products/kan-058-1.jpg",
     "gallery": [
       "/products/kan-058-1.jpg",
-      "/products/kan-058-2.jpg",
-      "/products/kan-058-3.jpg"
+      "/products/kan-058-2.jpg"
     ],
     "description": "A gold bangle cut with Roman-numeral detailing, a quiet, graphic everyday piece.",
     "featured": false,
@@ -190,8 +189,7 @@ export const products = [
     "image": "/products/kan-059-1.jpg",
     "gallery": [
       "/products/kan-059-1.jpg",
-      "/products/kan-059-2.jpg",
-      "/products/kan-059-3.jpg"
+      "/products/kan-059-2.jpg"
     ],
     "description": "A slim gold bangle set with sparkling zircon stones.",
     "featured": false,
@@ -209,8 +207,7 @@ export const products = [
     "image": "/products/kan-060-1.jpg",
     "gallery": [
       "/products/kan-060-1.jpg",
-      "/products/kan-060-2.jpg",
-      "/products/kan-060-3.jpg"
+      "/products/kan-060-2.jpg"
     ],
     "description": "Tulip blooms in soft pink stones on a gold-finish bracelet.",
     "featured": false,
@@ -247,8 +244,7 @@ export const products = [
     "image": "/products/kan-062-1.jpg",
     "gallery": [
       "/products/kan-062-1.jpg",
-      "/products/kan-062-2.jpg",
-      "/products/kan-062-3.jpg"
+      "/products/kan-062-2.jpg"
     ],
     "description": "Tulips in pink, purple and white stones on a silver-tone bracelet.",
     "featured": false,
@@ -265,8 +261,7 @@ export const products = [
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-063-1.jpg",
     "gallery": [
-      "/products/kan-063-1.jpg",
-      "/products/kan-063-2.jpg"
+      "/products/kan-063-1.jpg"
     ],
     "description": "Three snake chains layered in one necklace for an effortless, curated look.",
     "featured": false,
@@ -283,8 +278,7 @@ export const products = [
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stone Beads",
     "image": "/products/kan-064-1.jpg",
     "gallery": [
-      "/products/kan-064-1.jpg",
-      "/products/kan-064-2.jpg"
+      "/products/kan-064-1.jpg"
     ],
     "description": "Clover charms and stone beads on a fine gold chain.",
     "featured": false,
@@ -302,8 +296,7 @@ export const products = [
     "image": "/products/kan-065-1.jpg",
     "gallery": [
       "/products/kan-065-1.jpg",
-      "/products/kan-065-2.jpg",
-      "/products/kan-065-3.jpg"
+      "/products/kan-065-2.jpg"
     ],
     "description": "Two layered chains with geometric charms.",
     "featured": false,
@@ -320,8 +313,7 @@ export const products = [
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stones",
     "image": "/products/kan-066-1.jpg",
     "gallery": [
-      "/products/kan-066-1.jpg",
-      "/products/kan-066-2.jpg"
+      "/products/kan-066-1.jpg"
     ],
     "description": "Interlocked rings set with Roman numerals and stones.",
     "featured": false,
@@ -339,8 +331,7 @@ export const products = [
     "image": "/products/kan-067-1.jpg",
     "gallery": [
       "/products/kan-067-1.jpg",
-      "/products/kan-067-2.jpg",
-      "/products/kan-067-3.jpg"
+      "/products/kan-067-2.jpg"
     ],
     "description": "Square geometric charms spaced along a gold chain.",
     "featured": false,
@@ -357,8 +348,7 @@ export const products = [
     "material": "316L Stainless Steel, Gold Finish, Anti-Tarnish",
     "image": "/products/kan-068-1.jpg",
     "gallery": [
-      "/products/kan-068-1.jpg",
-      "/products/kan-068-2.jpg"
+      "/products/kan-068-1.jpg"
     ],
     "description": "A minimalist Y-shaped drop on a slim chain.",
     "featured": false,
@@ -376,8 +366,7 @@ export const products = [
     "image": "/products/kan-069-1.jpg",
     "gallery": [
       "/products/kan-069-1.jpg",
-      "/products/kan-069-2.jpg",
-      "/products/kan-069-3.jpg"
+      "/products/kan-069-2.jpg"
     ],
     "description": "An irregular bamboo-textured bar on a snake chain.",
     "featured": false,
@@ -414,8 +403,7 @@ export const products = [
     "image": "/products/kan-071-1.jpg",
     "gallery": [
       "/products/kan-071-1.jpg",
-      "/products/kan-071-2.jpg",
-      "/products/kan-071-3.jpg"
+      "/products/kan-071-2.jpg"
     ],
     "description": "Several fine chains layered in a single necklace.",
     "featured": false,
@@ -432,8 +420,7 @@ export const products = [
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Pearl-effect Bead",
     "image": "/products/kan-072-1.jpg",
     "gallery": [
-      "/products/kan-072-1.jpg",
-      "/products/kan-072-2.jpg"
+      "/products/kan-072-1.jpg"
     ],
     "description": "Pearl charms along a gold chain.",
     "featured": false,
@@ -451,8 +438,7 @@ export const products = [
     "image": "/products/kan-073-1.jpg",
     "gallery": [
       "/products/kan-073-1.jpg",
-      "/products/kan-073-2.jpg",
-      "/products/kan-073-3.jpg"
+      "/products/kan-073-2.jpg"
     ],
     "description": "A sleek silver-tone snake-chain anklet.",
     "featured": false,
@@ -470,8 +456,7 @@ export const products = [
     "image": "/products/kan-074-1.jpg",
     "gallery": [
       "/products/kan-074-1.jpg",
-      "/products/kan-074-2.jpg",
-      "/products/kan-074-3.jpg"
+      "/products/kan-074-2.jpg"
     ],
     "description": "A dual-layer snake-chain anklet with bead detail.",
     "featured": false,
@@ -1755,12 +1740,25 @@ export const ringsHeroImage = img("1551346261-e19dd7ae9587", 900, 1100);
 import qimatiCatalog from "../../public/qimati-catalog.json";
 import qimatiVariants from "../../public/qimati-variants.json";
 import legacyQimatiMatches from "../../public/qimati-legacy-matches.json";
+
+const rejectedImageFiles = new Set([
+  "kan-058-3.jpg", "kan-059-3.jpg", "kan-060-3.jpg", "kan-062-3.jpg",
+  "kan-063-2.jpg", "kan-064-2.jpg", "kan-065-3.jpg", "kan-066-2.jpg",
+  "kan-067-3.jpg", "kan-068-2.jpg", "kan-069-3.jpg", "kan-071-3.jpg",
+  "kan-072-2.jpg", "kan-073-3.jpg", "kan-074-3.jpg",
+]);
+
+const removeRejectedImages = (product) => {
+  const gallery = product.gallery.filter((image) => !rejectedImageFiles.has(image.split("/").pop()));
+  return { ...product, gallery, image: gallery[0] || product.image };
+};
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
 const legacyProducts = products.flatMap((product) => {
   const match = legacyQimatiMatches[product.id];
   if (match && !match.variants.some((variant) => variant.available)) return [];
+  const cleaned = removeRejectedImages(product);
   return [{
-    ...product,
+    ...cleaned,
     ...(match ? { variants: match.variants, options: match.options, qimatiHandle: match.handle, stockChecked: true } : {}),
   }];
 });
