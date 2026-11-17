@@ -1752,9 +1752,11 @@ const removeRejectedImages = (product) => {
   const gallery = product.gallery.filter((image) => !rejectedImageFiles.has(image.split("/").pop()));
   return { ...product, gallery, image: gallery[0] || product.image };
 };
+const removedProductIds = new Set(["kan-106", "kan-107"]);
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
 const legacyProducts = products.flatMap((product) => {
   const match = legacyQimatiMatches[product.id];
+  if (removedProductIds.has(product.id)) return [];
   if (match && !match.variants.every((variant) => variant.available)) return [];
   const cleaned = removeRejectedImages(product);
   return [{
