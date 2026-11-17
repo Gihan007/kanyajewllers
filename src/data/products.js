@@ -1739,7 +1739,6 @@ export const ringsHeroImage = img("1551346261-e19dd7ae9587", 900, 1100);
 
 import qimatiCatalog from "../../public/qimati-catalog.json";
 import qimatiVariants from "../../public/qimati-variants.json";
-import legacyQimatiMatches from "../../public/qimati-legacy-matches.json";
 
 const rejectedImageFiles = new Set([
   "kan-058-3.jpg", "kan-059-3.jpg", "kan-060-3.jpg", "kan-062-3.jpg",
@@ -1766,14 +1765,11 @@ const manuallyRemovedQimatiIds = new Set([
 ]);
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
 const legacyProducts = products.flatMap((product) => {
-  const match = legacyQimatiMatches[product.id];
   if (removedProductIds.has(product.id)) return [];
-  if (match && !match.variants.every((variant) => variant.available)) return [];
+  // Use KANYA's own product stock data only; entries without available variants display "Sold Out".
+  if (!product.variants?.length || !product.variants.every((variant) => variant.available)) return [];
   const cleaned = removeRejectedImages(product);
-  return [{
-    ...cleaned,
-    ...(match ? { variants: match.variants, options: match.options, qimatiHandle: match.handle, stockChecked: true } : {}),
-  }];
+  return [cleaned];
 });
 
 export const allProducts = [...legacyProducts, ...qimatiCatalog.filter((q) => {
