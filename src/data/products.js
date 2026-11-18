@@ -1762,6 +1762,9 @@ const manuallyRemovedQimatiIds = new Set([
   "bracelet-kada-638-small", "bracelet-kada-635", "bracelet-kada-633-small", "bracelet-kada-632-small",
   "bracelet-kada-631", "bracelet-kada-620", "bracelet-kada-618", "bracelet-kada-609", "bracelet-kada-587",
   "bracelet-kada-580", "bracelet-kada-561", "bracelet-kada-560", "bracelet-kada-557",
+  "necklace-1453", "necklace-1452", "necklace-1695", "necklace-1599", "necklace-1468", "necklace-1457",
+  "necklace-1970", "necklace-1969", "necklace-2068", "necklace-2112", "necklace-2109", "necklace-2108",
+  "necklace-2107",
 ]);
 const excludedCategories = new Set(["Nose Pin", "Brooch", "Hand Chains", "Waist Chains", "Watches", "Bags", "Hair Accessories", "Indian Jewellery", "Boxes & Displays"]);
 const legacyProducts = products.flatMap((product) => {
