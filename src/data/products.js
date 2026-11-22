@@ -31,7 +31,7 @@ export const products = [
     "name": "Crystal Ear Jacket Studs",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1000,
+    "price": 1100,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-039-1.jpg",
     "gallery": [
@@ -46,7 +46,7 @@ export const products = [
     "name": "Pave Square Huggie Earrings",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1190,
+    "price": 1350,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-041-1.jpg",
     "gallery": [
