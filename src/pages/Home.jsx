@@ -31,7 +31,7 @@ const lineReveal = {
 export default function Home() {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
-  const featuredImport = allProducts.filter((p) => p.originalPrice).slice(-8);
+  const featuredImport = allProducts.filter((p) => p.originalPrice).sort((a, b) => b.price - a.price).slice(0, 8);
 
   useEffect(() => {
     const v = videoRef.current;

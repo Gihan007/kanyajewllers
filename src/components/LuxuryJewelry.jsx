@@ -13,7 +13,7 @@ const tabs = [
 export default function LuxuryJewelry() {
   const [active, setActive] = useState("new");
   const activeTabs = tabs.filter((t) => products.some((p) => p.tags?.includes(t.key)));
-  const items = products.filter((p) => p.tags?.includes(active)).slice(0, 4);
+  const items = products.filter((p) => p.tags?.includes(active)).sort((a, b) => b.price - a.price).slice(0, 4);
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
