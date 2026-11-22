@@ -151,7 +151,7 @@ export const products = [
     "name": "Graduated Crystal Drop Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1900,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-057-1.jpg",
     "gallery": [
