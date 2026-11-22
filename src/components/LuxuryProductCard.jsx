@@ -46,9 +46,6 @@ export default function LuxuryProductCard({ product }) {
         <div className="mt-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="flex flex-wrap items-baseline gap-x-2 whitespace-nowrap">
             <span className="text-base text-pearl">{formatPrice(product.price)}</span>
-            {product.originalPrice && (
-              <span className="text-xs text-mist line-through">{formatPrice(product.originalPrice)}</span>
-            )}
           </p>
           <button
             type="button"
