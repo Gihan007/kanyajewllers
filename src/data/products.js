@@ -605,7 +605,7 @@ export const products = [
     "name": "Luna Dewdrop Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2250,
+    "price": 1860,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-083-1.jpg",
     "gallery": [
@@ -622,7 +622,7 @@ export const products = [
     "name": "Celeste Horizon Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1780,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-084-1.jpg",
     "gallery": [
