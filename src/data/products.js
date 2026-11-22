@@ -911,7 +911,7 @@ export const products = [
     "name": "Petal Drop",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1490,
+    "price": 1590,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-101-1.jpg",
     "gallery": [
