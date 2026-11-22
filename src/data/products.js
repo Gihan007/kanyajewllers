@@ -16,7 +16,7 @@ export const products = [
     "id": "kan-020",
     "name": "Coral Shell Chip Necklace",
     "category": "Necklaces",
-    "price": 1200,
+    "price": 1260,
     "material": "Natural Shell",
     "image": "/products/kan-020-1.jpg",
     "gallery": [
@@ -31,7 +31,7 @@ export const products = [
     "name": "Crystal Ear Jacket Studs",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1100,
+    "price": 1120,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-039-1.jpg",
     "gallery": [
@@ -46,7 +46,7 @@ export const products = [
     "name": "Pave Square Huggie Earrings",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-041-1.jpg",
     "gallery": [
@@ -61,7 +61,7 @@ export const products = [
     "name": "Nautilus Shell Statement Earrings",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1000,
+    "price": 1020,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-043-1.jpg",
     "gallery": [
@@ -76,7 +76,7 @@ export const products = [
     "name": "Wave Trio Bangle Set",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-044-1.jpg",
     "gallery": [
@@ -91,7 +91,7 @@ export const products = [
     "name": "Triple Bezel Drop Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1400,
+    "price": 1460,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-048-1.jpg",
     "gallery": [
@@ -106,7 +106,7 @@ export const products = [
     "name": "Ruby Tulip Pendant Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-049-1.jpg",
     "gallery": [
@@ -121,7 +121,7 @@ export const products = [
     "name": "Halo Teardrop Pendant Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-053-1.jpg",
     "gallery": [
@@ -136,7 +136,7 @@ export const products = [
     "name": "Rosebud Station Chain Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-054-1.jpg",
     "gallery": [
@@ -151,7 +151,7 @@ export const products = [
     "name": "Graduated Crystal Drop Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1900,
+    "price": 1920,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-057-1.jpg",
     "gallery": [
@@ -166,7 +166,7 @@ export const products = [
     "name": "Amara Roman Bangle",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1690,
+    "price": 1750,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-058-1.jpg",
     "gallery": [
@@ -184,7 +184,7 @@ export const products = [
     "name": "Celia Zircon Bangle",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1750,
+    "price": 1810,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
     "image": "/products/kan-059-1.jpg",
     "gallery": [
@@ -202,7 +202,7 @@ export const products = [
     "name": "Flora Pink Tulip Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stones",
     "image": "/products/kan-060-1.jpg",
     "gallery": [
@@ -220,7 +220,7 @@ export const products = [
     "name": "Astra Zircon Bangle",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 2050,
+    "price": 2070,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
     "image": "/products/kan-061-1.jpg",
     "gallery": [
@@ -239,7 +239,7 @@ export const products = [
     "name": "Flora Purple Tulip Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, Anti-Tarnish, Stones",
     "image": "/products/kan-062-1.jpg",
     "gallery": [
@@ -257,7 +257,7 @@ export const products = [
     "name": "Triple Layer Snake Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2350,
+    "price": 2410,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-063-1.jpg",
     "gallery": [
@@ -274,7 +274,7 @@ export const products = [
     "name": "Celia Clover Stone Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stone Beads",
     "image": "/products/kan-064-1.jpg",
     "gallery": [
@@ -291,7 +291,7 @@ export const products = [
     "name": "Astra Layered Charm Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-065-1.jpg",
     "gallery": [
@@ -309,7 +309,7 @@ export const products = [
     "name": "Astra Interlocked Ring Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Stones",
     "image": "/products/kan-066-1.jpg",
     "gallery": [
@@ -326,7 +326,7 @@ export const products = [
     "name": "Kira Geometric Charm Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1950,
+    "price": 1970,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-067-1.jpg",
     "gallery": [
@@ -344,7 +344,7 @@ export const products = [
     "name": "Zola Y-Drop Minimalist Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1650,
+    "price": 1710,
     "material": "316L Stainless Steel, Gold Finish, Anti-Tarnish",
     "image": "/products/kan-068-1.jpg",
     "gallery": [
@@ -361,7 +361,7 @@ export const products = [
     "name": "Iris Bamboo Bar Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1690,
+    "price": 1750,
     "material": "316L Stainless Steel, Gold Finish, Anti-Tarnish",
     "image": "/products/kan-069-1.jpg",
     "gallery": [
@@ -379,7 +379,7 @@ export const products = [
     "name": "Astra Multi-Color Charm Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "316L Stainless Steel, Anti-Tarnish, Stones",
     "image": "/products/kan-070-1.jpg",
     "gallery": [
@@ -398,7 +398,7 @@ export const products = [
     "name": "Saffron Multi-Layer Chain Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1690,
+    "price": 1750,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-071-1.jpg",
     "gallery": [
@@ -416,7 +416,7 @@ export const products = [
     "name": "Seraphina Pearl Charm Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Pearl-effect Bead",
     "image": "/products/kan-072-1.jpg",
     "gallery": [
@@ -433,7 +433,7 @@ export const products = [
     "name": "Solana Silver Snake Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1390,
+    "price": 1450,
     "material": "Stainless Steel, Silver Colour, Anti-Tarnish",
     "image": "/products/kan-073-1.jpg",
     "gallery": [
@@ -451,7 +451,7 @@ export const products = [
     "name": "Sienna Snake Bead Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish",
     "image": "/products/kan-074-1.jpg",
     "gallery": [
@@ -469,7 +469,7 @@ export const products = [
     "name": "Sienna Sleek Band",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1390,
+    "price": 1450,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-075-1.jpg",
     "gallery": [
@@ -486,7 +486,7 @@ export const products = [
     "name": "Rhea Minimalist Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1250,
+    "price": 1310,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-076-1.jpg",
     "gallery": [
@@ -503,7 +503,7 @@ export const products = [
     "name": "Kira Hammered Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1250,
+    "price": 1310,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-077-1.jpg",
     "gallery": [
@@ -520,7 +520,7 @@ export const products = [
     "name": "Zola Polished Band",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1360,
+    "price": 1420,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-078-1.jpg",
     "gallery": [
@@ -537,7 +537,7 @@ export const products = [
     "name": "Veda Sculpted Band",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-079-1.jpg",
     "gallery": [
@@ -554,7 +554,7 @@ export const products = [
     "name": "Nova Minimalist Stud",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1150,
+    "price": 1170,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-080-1.jpg",
     "gallery": [
@@ -571,7 +571,7 @@ export const products = [
     "name": "Celeste Geo Stud",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-081-1.jpg",
     "gallery": [
@@ -588,7 +588,7 @@ export const products = [
     "name": "Zephyr Delicate Stud",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-082-1.jpg",
     "gallery": [
@@ -605,7 +605,7 @@ export const products = [
     "name": "Luna Dewdrop Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1860,
+    "price": 1920,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-083-1.jpg",
     "gallery": [
@@ -622,7 +622,7 @@ export const products = [
     "name": "Celeste Horizon Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1780,
+    "price": 1840,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-084-1.jpg",
     "gallery": [
@@ -639,7 +639,7 @@ export const products = [
     "name": "Amber Dawn Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1590,
+    "price": 1650,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-085-1.jpg",
     "gallery": [
@@ -656,7 +656,7 @@ export const products = [
     "name": "Meadow Gold Strand",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2250,
+    "price": 2310,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-086-1.jpg",
     "gallery": [
@@ -673,7 +673,7 @@ export const products = [
     "name": "Iris Dusk Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1760,
+    "price": 1820,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-087-1.jpg",
     "gallery": [
@@ -690,7 +690,7 @@ export const products = [
     "name": "Solana Vine Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "304 Stainless Steel, Gold Finish, Crystal",
     "image": "/products/kan-088-1.jpg",
     "gallery": [
@@ -707,7 +707,7 @@ export const products = [
     "name": "Marigold Petal Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1750,
+    "price": 1810,
     "material": "304 Stainless Steel, Gold Finish, Pearl-effect Bead",
     "image": "/products/kan-089-1.jpg",
     "gallery": [
@@ -724,7 +724,7 @@ export const products = [
     "name": "Saffron Dainty Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1750,
+    "price": 1810,
     "material": "304 Stainless Steel, Gold Finish",
     "image": "/products/kan-090-1.jpg",
     "gallery": [
@@ -741,7 +741,7 @@ export const products = [
     "name": "Amber Dew Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "304 Stainless Steel, Gold Finish, Pearl-effect Bead",
     "image": "/products/kan-091-1.jpg",
     "gallery": [
@@ -758,7 +758,7 @@ export const products = [
     "name": "Isla Liquid Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1250,
+    "price": 1310,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-092-1.jpg",
     "gallery": [
@@ -775,7 +775,7 @@ export const products = [
     "name": "Saffron Multi-Band Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-093-1.jpg",
     "gallery": [
@@ -792,7 +792,7 @@ export const products = [
     "name": "Terra Ripple Open Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-094-1.jpg",
     "gallery": [
@@ -809,7 +809,7 @@ export const products = [
     "name": "Vela Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1360,
+    "price": 1420,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-095-1.jpg",
     "gallery": [
@@ -826,7 +826,7 @@ export const products = [
     "name": "Clover Muse",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1650,
+    "price": 1710,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-096-1.jpg",
     "gallery": [
@@ -843,7 +843,7 @@ export const products = [
     "name": "Amora Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-097-1.jpg",
     "gallery": [
@@ -860,7 +860,7 @@ export const products = [
     "name": "Solene Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-098-1.jpg",
     "gallery": [
@@ -877,7 +877,7 @@ export const products = [
     "name": "Zaria Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-099-1.jpg",
     "gallery": [
@@ -894,7 +894,7 @@ export const products = [
     "name": "Lumi Hoops",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-100-1.jpg",
     "gallery": [
@@ -911,7 +911,7 @@ export const products = [
     "name": "Petal Drop",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1590,
+    "price": 1650,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-101-1.jpg",
     "gallery": [
@@ -928,7 +928,7 @@ export const products = [
     "name": "Solstice Drops",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1690,
+    "price": 1750,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-102-1.jpg",
     "gallery": [
@@ -945,7 +945,7 @@ export const products = [
     "name": "Barely There Hoops",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1590,
+    "price": 1650,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-103-1.jpg",
     "gallery": [
@@ -962,7 +962,7 @@ export const products = [
     "name": "Auralis Hoops",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1590,
+    "price": 1650,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-104-1.jpg",
     "gallery": [
@@ -979,7 +979,7 @@ export const products = [
     "name": "Everglow Hoops",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1590,
+    "price": 1650,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-105-1.jpg",
     "gallery": [
@@ -996,7 +996,7 @@ export const products = [
     "name": "Zola Sleek Cuff",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 2050,
+    "price": 2070,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-106-1.jpg",
     "gallery": [
@@ -1013,7 +1013,7 @@ export const products = [
     "name": "Kira Hammered Bangle",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 2050,
+    "price": 2070,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-107-1.jpg",
     "gallery": [
@@ -1030,7 +1030,7 @@ export const products = [
     "name": "Nala Polished Cuff",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 2050,
+    "price": 2070,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-108-1.jpg",
     "gallery": [
@@ -1047,7 +1047,7 @@ export const products = [
     "name": "Lira Dainty Link",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-109-1.jpg",
     "gallery": [
@@ -1064,7 +1064,7 @@ export const products = [
     "name": "Thalassa Wave Chain",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1350,
+    "price": 1410,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-110-1.jpg",
     "gallery": [
@@ -1081,7 +1081,7 @@ export const products = [
     "name": "Ember Petite Link",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-111-1.jpg",
     "gallery": [
@@ -1098,7 +1098,7 @@ export const products = [
     "name": "Nova Gold Strand",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-112-1.jpg",
     "gallery": [
@@ -1115,7 +1115,7 @@ export const products = [
     "name": "Rhea Minimalist Chain",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-113-1.jpg",
     "gallery": [
@@ -1132,7 +1132,7 @@ export const products = [
     "name": "Veda Thread Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-114-1.jpg",
     "gallery": [
@@ -1149,7 +1149,7 @@ export const products = [
     "name": "Maya Chic Link",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-115-1.jpg",
     "gallery": [
@@ -1166,7 +1166,7 @@ export const products = [
     "name": "Orla Gleam Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-116-1.jpg",
     "gallery": [
@@ -1183,7 +1183,7 @@ export const products = [
     "name": "Sora Fine Link",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1250,
+    "price": 1310,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-117-1.jpg",
     "gallery": [
@@ -1200,7 +1200,7 @@ export const products = [
     "name": "Calla Meadow Bangle",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-118-1.jpg",
     "gallery": [
@@ -1217,7 +1217,7 @@ export const products = [
     "name": "Astra Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-119-1.jpg",
     "gallery": [
@@ -1234,7 +1234,7 @@ export const products = [
     "name": "Elara Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-120-1.jpg",
     "gallery": [
@@ -1251,7 +1251,7 @@ export const products = [
     "name": "Gemora Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1560,
+    "price": 1620,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-121-1.jpg",
     "gallery": [
@@ -1268,7 +1268,7 @@ export const products = [
     "name": "Flora Belle Bracelet",
     "category": "Bracelets",
     "style": "tarnish",
-    "price": 1650,
+    "price": 1710,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-122-1.jpg",
     "gallery": [
@@ -1285,7 +1285,7 @@ export const products = [
     "name": "Solara Duo",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-123-1.jpg",
     "gallery": [
@@ -1302,7 +1302,7 @@ export const products = [
     "name": "Rosé Stardust",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2250,
+    "price": 2310,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-124-1.jpg",
     "gallery": [
@@ -1319,7 +1319,7 @@ export const products = [
     "name": "Golden Dune",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1560,
+    "price": 1620,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-125-1.jpg",
     "gallery": [
@@ -1336,7 +1336,7 @@ export const products = [
     "name": "Celestial Dew",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1960,
+    "price": 1980,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-126-1.jpg",
     "gallery": [
@@ -1353,7 +1353,7 @@ export const products = [
     "name": "Amber Bloom",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1560,
+    "price": 1620,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-127-1.jpg",
     "gallery": [
@@ -1370,7 +1370,7 @@ export const products = [
     "name": "Moonlit Pearl",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1890,
+    "price": 1950,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-128-1.jpg",
     "gallery": [
@@ -1387,7 +1387,7 @@ export const products = [
     "name": "Solstice Glow",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1460,
+    "price": 1520,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-129-1.jpg",
     "gallery": [
@@ -1404,7 +1404,7 @@ export const products = [
     "name": "Meadow Whisper",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-130-1.jpg",
     "gallery": [
@@ -1421,7 +1421,7 @@ export const products = [
     "name": "Terra Pearl",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-131-1.jpg",
     "gallery": [
@@ -1438,7 +1438,7 @@ export const products = [
     "name": "Perla Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 2150,
+    "price": 2170,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-132-1.jpg",
     "gallery": [
@@ -1455,7 +1455,7 @@ export const products = [
     "name": "Sienna Chain Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-133-1.jpg",
     "gallery": [
@@ -1472,7 +1472,7 @@ export const products = [
     "name": "Dewdrop Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1750,
+    "price": 1810,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-134-1.jpg",
     "gallery": [
@@ -1489,7 +1489,7 @@ export const products = [
     "name": "Café Link Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1450,
+    "price": 1510,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-135-1.jpg",
     "gallery": [
@@ -1506,7 +1506,7 @@ export const products = [
     "name": "Golden Raindrops Anklet",
     "category": "Anklets",
     "style": "tarnish",
-    "price": 1550,
+    "price": 1610,
     "material": "Stainless Steel, Gold Finish",
     "image": "/products/kan-136-1.jpg",
     "gallery": [
@@ -1523,7 +1523,7 @@ export const products = [
     "name": "Celeste Star",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1190,
+    "price": 1210,
     "material": "Stainless Steel, Silver Finish, Clear Stone",
     "image": "/products/kan-137-1.jpg",
     "gallery": [
@@ -1540,7 +1540,7 @@ export const products = [
     "name": "Celeste Bloom",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1390,
+    "price": 1450,
     "material": "Stainless Steel, Silver Finish, Clear Stone",
     "image": "/products/kan-138-1.jpg",
     "gallery": [
@@ -1557,7 +1557,7 @@ export const products = [
     "name": "Celeste Teardrop",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1490,
+    "price": 1550,
     "material": "Stainless Steel, Silver Finish, Clear Stone",
     "image": "/products/kan-139-1.jpg",
     "gallery": [
@@ -1574,7 +1574,7 @@ export const products = [
     "name": "Flora Star",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1190,
+    "price": 1210,
     "material": "Stainless Steel, Gold Finish, Clear Stone",
     "image": "/products/kan-140-1.jpg",
     "gallery": [
@@ -1591,7 +1591,7 @@ export const products = [
     "name": "Daisy Muse",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1390,
+    "price": 1450,
     "material": "Stainless Steel, Gold Finish, Clear Stone",
     "image": "/products/kan-141-1.jpg",
     "gallery": [
@@ -1608,7 +1608,7 @@ export const products = [
     "name": "Pearl Dew",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 1490,
+    "price": 1550,
     "material": "Stainless Steel, Gold Finish, Clear Stone",
     "image": "/products/kan-142-1.jpg",
     "gallery": [
@@ -1625,7 +1625,7 @@ export const products = [
     "name": "Celia Zircon Petal Ring",
     "category": "Rings",
     "style": "tarnish",
-    "price": 2260,
+    "price": 2320,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Zircon",
     "image": "/products/kan-144-1.jpg",
     "gallery": [
@@ -1642,7 +1642,7 @@ export const products = [
     "name": "Marigold Tassel Drop",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 790,
+    "price": 850,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Marquise Zirconia",
     "image": "/products/kan-145-1.jpg",
     "gallery": [
@@ -1661,7 +1661,7 @@ export const products = [
     "name": "Seraphina Pearl Huggie",
     "category": "Earrings",
     "style": "tarnish",
-    "price": 660,
+    "price": 720,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Shell Pearl, Zircon",
     "image": "/products/kan-146-1.jpg",
     "gallery": [
@@ -1680,7 +1680,7 @@ export const products = [
     "name": "Cherry Blossom Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1790,
+    "price": 1850,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Cubic Zirconia",
     "image": "/products/kan-147-1.jpg",
     "gallery": [
@@ -1699,7 +1699,7 @@ export const products = [
     "name": "Rhinestone Spacer Necklace",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 2260,
+    "price": 2320,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, Rhinestone",
     "image": "/products/kan-148-1.jpg",
     "gallery": [
@@ -1718,7 +1718,7 @@ export const products = [
     "name": "Zircon Round Solitaire Chain",
     "category": "Necklaces",
     "style": "tarnish",
-    "price": 1660,
+    "price": 1720,
     "material": "Stainless Steel, 18K Gold Finish, Anti-Tarnish, White Zircon",
     "image": "/products/kan-149-1.jpg",
     "gallery": [
