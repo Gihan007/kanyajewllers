@@ -58,9 +58,11 @@ export default function Shop() {
           <p className="mt-3 max-w-2xl text-sm text-mist">{filtered.length.toLocaleString("en-IN")} designs available</p>
         </motion.div>
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          {[{ key: "all", label: "All products" }, { key: "qimati", label: "Full imported catalogue" }].map((option) => <button key={option.key} onClick={() => { if (option.key === "all") params.delete("source"); else params.set("source", option.key); setParams(params); }} className={`rounded-full border px-4 py-2 text-xs uppercase tracking-wider ${source === option.key ? "border-gold bg-gold/10 text-gold" : "border-ink/16 text-mist"}`}>{option.label}</button>)}
-        </div>
+        {activeCategory === "All" && (
+          <div className="mt-8 flex flex-wrap gap-2">
+            {[{ key: "all", label: "All products" }, { key: "qimati", label: "Full imported catalogue" }].map((option) => <button key={option.key} onClick={() => { if (option.key === "all") params.delete("source"); else params.set("source", option.key); setParams(params); }} className={`rounded-full border px-4 py-2 text-xs uppercase tracking-wider ${source === option.key ? "border-gold bg-gold/10 text-gold" : "border-ink/16 text-mist"}`}>{option.label}</button>)}
+          </div>
+        )}
 
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-2">
