@@ -21,7 +21,10 @@ export default function Shop() {
     let list = [...allProducts];
     if (source === "qimati") list = list.filter((p) => Boolean(p.originalPrice));
     if (activeStyle) list = list.filter((p) => p.style === activeStyle.key);
-    if (activeCategory !== "All") list = list.filter((p) => activeCategory === "Bracelets" ? p.category.toLowerCase().includes("bracelet") : p.category.toLowerCase().includes(activeCategory.toLowerCase()));
+    if (activeCategory !== "All") {
+      const singular = activeCategory.toLowerCase().replace(/s$/, "");
+      list = list.filter((p) => p.category.toLowerCase().includes(singular));
+    }
     return list.sort(sorters[sort]);
   }, [activeCategory, activeStyle, sort, source]);
 
