@@ -29,7 +29,7 @@ export default function About() {
           className="mx-auto mt-6 max-w-2xl text-mist"
         >
           KANYA was founded on a simple idea: everyday luxury shouldn't be fragile. Every piece we curate
-          blends a clean, modern aesthetic with waterproof, tarnish-free 316L stainless steel—built for the
+          blends a clean, modern aesthetic with waterproof, tarnish-free surgical-grade stainless steel—built for the
           way you actually live, move, and shine every day.
         </motion.p>
       </section>
@@ -42,7 +42,7 @@ export default function About() {
           },
           {
             title: "Waterproof & Tarnish-Free",
-            desc: "Crafted from durable 316L stainless steel designed to withstand water, sweat, and daily wear without losing its shine.",
+            desc: "Crafted from durable premium stainless steel designed to withstand water, sweat, and daily wear without losing its shine.",
           },
           {
             title: "Effortless Everyday",

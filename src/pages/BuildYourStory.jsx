@@ -22,7 +22,7 @@ export default function BuildYourStory() {
             <p className="text-xs uppercase tracking-[0.2em] text-gold">Styling &amp; Curation</p>
             <h1 className="mt-3 font-display text-5xl text-pearl sm:text-6xl">Build Your Story</h1>
             <p className="mt-6 max-w-md text-mist">
-              Every meaningful collection starts with a single piece. Layer our waterproof 316L
+              Every meaningful collection starts with a single piece. Layer our waterproof, tarnish-free
               stainless steel chains, stack delicate rings, and mix textures to curate a look that is
               entirely, effortlessly yours.
             </p>

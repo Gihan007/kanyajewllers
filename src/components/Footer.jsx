@@ -59,8 +59,8 @@ export default function Footer() {
             <li><Link to="/build-your-story" className="inline-block py-1.5 hover:text-pearl">Build Your Story</Link></li>
             <li><Link to="/about" className="inline-block py-1.5 hover:text-pearl">Our Story</Link></li>
             <li><Link to="/contact" className="inline-block py-1.5 hover:text-pearl">Contact</Link></li>
-            <li><a href="#" className="inline-block py-1.5 hover:text-pearl">Shipping &amp; Returns</a></li>
-            <li><a href="#" className="inline-block py-1.5 hover:text-pearl">Care Guide</a></li>
+            <li><Link to="/shipping-returns" className="inline-block py-1.5 hover:text-pearl">Shipping &amp; Returns</Link></li>
+            <li><Link to="/care-guide" className="inline-block py-1.5 hover:text-pearl">Care Guide</Link></li>
           </ul>
         </div>
 
