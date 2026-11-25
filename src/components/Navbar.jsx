@@ -1,9 +1,21 @@
 ﻿import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Menu, Search, ShoppingBag, User, Heart, X, ChevronDown } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 const menuCategories = ["Rings", "Earrings", "Necklaces", "Bracelets", "Anklets"];
+const brandLetters = "KANY".split("");
+
+const brandStagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.4 } },
+};
+
+const brandLetter = {
+  hidden: { opacity: 0, x: -10 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 const simpleLinks = [
   { to: "/build-your-story", label: "Build Your Story" },
@@ -46,7 +58,22 @@ export default function Navbar() {
           to="/"
           className={`font-display text-2xl tracking-[0.2em] ${transparent ? "text-sand" : "text-pearl"}`}
         >
-          KANY<span className={transparent ? "text-gold-soft" : "text-gradient-gold"}>Ã</span>
+          {isHome ? (
+            <motion.span className="inline-flex" variants={brandStagger} initial="hidden" animate="show">
+              {brandLetters.map((letter, i) => (
+                <motion.span key={i} variants={brandLetter}>
+                  {letter}
+                </motion.span>
+              ))}
+              <motion.span variants={brandLetter} className={transparent ? "text-gold-soft" : "text-gradient-gold"}>
+                Ã
+              </motion.span>
+            </motion.span>
+          ) : (
+            <>
+              KANY<span className={transparent ? "text-gold-soft" : "text-gradient-gold"}>Ã</span>
+            </>
+          )}
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
