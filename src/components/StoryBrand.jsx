@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function StoryBrand() {
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <section className="mx-auto max-w-7xl px-6 pb-20 pt-10 lg:px-10">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
