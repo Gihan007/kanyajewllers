@@ -25,7 +25,7 @@ export const store = {
   // it lives only in the Google script's private settings. Turn "enabled" on once the steps in the README are done.
   payhere: { enabled: false, sandbox: true, merchantId: "1239144" },
 
-  shipping: { fee: 350, freeOver: 5000 },
+  shipping: { fee: 350, freeOver: 10000 },
 };
 
 export const bankConfigured = Boolean(store.bank.bankName && store.bank.accountNumber);
