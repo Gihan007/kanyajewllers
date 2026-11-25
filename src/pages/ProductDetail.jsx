@@ -161,7 +161,7 @@ export default function ProductDetail() {
             <div className="mt-10 space-y-3 border-t border-ink/16 pt-6 text-sm text-mist">
               <div className="flex items-center gap-3"><Truck size={16} className="text-gold" /> Free shipping on orders over {formatPrice(store.shipping.freeOver)}</div>
               <div className="flex items-center gap-3"><Undo2 size={16} className="text-gold" /> 30-day returns</div>
-              <div className="flex items-center gap-3"><ShieldCheck size={16} className="text-gold" /> Lifetime warranty &amp; care</div>
+              <Link to="/care-guide" className="flex items-center gap-3 hover:text-pearl"><ShieldCheck size={16} className="text-gold" /> How to care for this piece</Link>
             </div>
           </motion.div>
         </div>
