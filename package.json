@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-prices.mjs",
+    "prebuild": "node scripts/gen-prices.mjs && node scripts/gen-sitemap.mjs",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
@@ -16,6 +16,7 @@
     "lucide-react": "^1.69.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-helmet-async": "^3.2.0",
     "react-router-dom": "^7.18.5"
   },
   "devDependencies": {

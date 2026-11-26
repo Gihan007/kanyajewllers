@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Gem, PenLine, Sparkles } from "lucide-react";
 import StoryCarousel from "../components/StoryCarousel";
+import Seo from "../components/Seo";
 
 const steps = [
   { icon: Gem, title: "Choose Your Pieces", desc: "Start with a foundational everyday staple—a sleek minimalist chain or a sculptural ring designed to withstand daily wear." },
@@ -16,6 +17,11 @@ const fadeUp = {
 export default function BuildYourStory() {
   return (
     <div className="bg-aurora">
+      <Seo
+        title="Build Your Story — Layer KANYÃ Jewellery | Sri Lanka"
+        description="Learn how to layer and style KANYÃ's waterproof, tarnish-free stainless steel chains, rings and bracelets to build your own everyday look."
+        path="/build-your-story"
+      />
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10">
           <motion.div initial="hidden" animate="show" variants={fadeUp}>

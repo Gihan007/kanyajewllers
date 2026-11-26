@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -31,6 +32,11 @@ const tips = [
 export default function CareGuide() {
   return (
     <div className="bg-aurora">
+      <Seo
+        title="Jewellery Care Guide — Keep Your KANYÃ Pieces Glowing"
+        description="How to care for your waterproof, tarnish-free KANYÃ jewellery: cleaning, storage and everyday wear tips for stainless steel pieces in Sri Lanka's climate."
+        path="/care-guide"
+      />
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-10">
         <motion.p initial="hidden" animate="show" variants={fadeUp} className="text-center text-xs uppercase tracking-[0.2em] text-gold">
           Keep It Glowing

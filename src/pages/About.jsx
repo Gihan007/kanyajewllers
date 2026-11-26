@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -8,6 +9,11 @@ const fadeUp = {
 export default function About() {
   return (
     <div className="bg-aurora">
+      <Seo
+        title="Our Story — KANYÃ Jewellery Sri Lanka"
+        description="KANYÃ is an online jewellery brand in Sri Lanka crafting waterproof, tarnish-free surgical-grade stainless steel pieces built for everyday life."
+        path="/about"
+      />
       <section className="mx-auto max-w-5xl px-6 py-24 text-center lg:px-10">
         <motion.p initial="hidden" animate="show" variants={fadeUp} className="text-xs uppercase tracking-[0.2em] text-gold">
           Our Story

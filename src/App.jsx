@@ -1,5 +1,6 @@
 import { useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -25,9 +26,26 @@ function ScrollToTop() {
   return null;
 }
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KANYÃ",
+  url: "https://kanyajewellers.com",
+  logo: "https://kanyajewellers.com/favicon.svg",
+  description: "KANYÃ sells waterproof, tarnish-free surgical-grade stainless steel jewellery online in Sri Lanka — rings, necklaces, earrings, bracelets and anklets delivered island-wide.",
+  areaServed: { "@type": "Country", name: "Sri Lanka" },
+  address: { "@type": "PostalAddress", addressCountry: "LK" },
+};
+
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-sand">
+      <Helmet>
+        <html lang="en" />
+        <meta name="geo.region" content="LK" />
+        <meta name="geo.placename" content="Sri Lanka" />
+        <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
+      </Helmet>
       <ScrollToTop />
       <a
         href="#main"

@@ -2,6 +2,7 @@
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductCard from "../components/ProductCard";
+import Seo from "../components/Seo";
 import { allProducts, categories, styles } from "../data/products";
 
 const sorters = {
@@ -42,8 +43,16 @@ export default function Shop() {
     setParams(params, { replace: true });
   };
 
+  const seoTitle = activeCategory === "All"
+    ? "Shop Jewellery Online in Sri Lanka | KANYÃ"
+    : `Buy ${activeCategory} Online in Sri Lanka | KANYÃ`;
+  const seoDescription = activeCategory === "All"
+    ? "Browse KANYÃ's full collection of waterproof, tarnish-free stainless steel jewellery — rings, necklaces, earrings, bracelets and anklets, delivered island-wide in Sri Lanka."
+    : `Shop ${activeCategory.toLowerCase()} online in Sri Lanka from KANYÃ. Waterproof, tarnish-free stainless steel with 18k PVD gold finish, delivered island-wide.`;
+
   return (
     <div className="bg-aurora min-h-screen">
+      <Seo title={seoTitle} description={seoDescription} path={activeCategory === "All" ? "/shop" : `/shop?category=${activeCategory}`} />
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <p className="text-xs uppercase tracking-[0.2em] text-gold">

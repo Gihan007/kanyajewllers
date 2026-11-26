@@ -5,6 +5,7 @@ import { motion, MotionConfig, useScroll, useTransform } from "framer-motion";
 import LuxuryJewelry from "../components/LuxuryJewelry";
 import StoryBrand from "../components/StoryBrand";
 import PhotoCollectionGrid from "../components/PhotoCollectionGrid";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -60,6 +61,11 @@ export default function Home() {
   return (
     <MotionConfig reducedMotion="user">
     <div>
+      <Seo
+        title="KANYÃ — Waterproof, Tarnish-Free Jewellery Online in Sri Lanka"
+        description="Shop KANYÃ's waterproof, tarnish-free stainless steel rings, necklaces, earrings, bracelets and anklets online in Sri Lanka. Island-wide delivery, hypoallergenic, 18k PVD gold finish."
+        path="/"
+      />
       {/* Hero */}
       <section ref={heroRef} className="relative overflow-hidden">
         <div className="relative h-[85vh] min-h-[640px] w-full">

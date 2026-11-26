@@ -8,6 +8,7 @@ import { allProducts, getProductById, formatPrice } from "../data/products";
 import { store } from "../config";
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
+import Seo, { SITE_URL } from "../components/Seo";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -62,6 +63,25 @@ export default function ProductDetail() {
 
   const related = allProducts.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
 
+  const seoDescription = (product.description || "").replace(/\n+/g, " ").slice(0, 155) ||
+    `Buy ${product.name} online in Sri Lanka from KANYÃ — waterproof, tarnish-free stainless steel jewellery with island-wide delivery.`;
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.gallery?.length ? product.gallery : [product.image],
+    description: seoDescription,
+    sku: product.id,
+    category: product.category,
+    offers: {
+      "@type": "Offer",
+      url: `${SITE_URL}/product/${product.id}`,
+      priceCurrency: "LKR",
+      price: product.price,
+      availability: availableVariants.length ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+    },
+  };
+
   const chooseOption = (option, value) => {
     const next = { ...selectedOptions, [option.position]: value };
     const match = availableVariants.find((variant) => variant.options?.[option.position - 1] === value &&
@@ -86,6 +106,14 @@ export default function ProductDetail() {
 
   return (
     <div className="bg-aurora">
+      <Seo
+        title={`${product.name} — Buy Online in Sri Lanka | KANYÃ`}
+        description={seoDescription}
+        path={`/product/${product.id}`}
+        image={product.image}
+        type="product"
+        jsonLd={productJsonLd}
+      />
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <nav className="mb-10 text-xs uppercase tracking-wider text-mist">
           <Link to="/shop" className="inline-block py-2 hover:text-gold">Shop</Link> / <span className="text-pearl">{product.category}</span>

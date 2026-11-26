@@ -1737,8 +1737,8 @@ export const heroImage = img("1697380582263-ba9f5ef8cefa", 900, 1100);
 export const lifestyleImage = img("1610214354095-684029c14300", 800, 900);
 export const ringsHeroImage = img("1551346261-e19dd7ae9587", 900, 1100);
 
-import qimatiCatalog from "../../public/qimati-catalog.json";
-import qimatiVariants from "../../public/qimati-variants.json";
+import qimatiCatalog from "../../public/qimati-catalog.json" with { type: "json" };
+import qimatiVariants from "../../public/qimati-variants.json" with { type: "json" };
 
 const rejectedImageFiles = new Set([
   "kan-058-3.jpg", "kan-059-3.jpg", "kan-060-3.jpg", "kan-062-3.jpg",

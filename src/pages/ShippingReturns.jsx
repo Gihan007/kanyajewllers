@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -45,6 +46,11 @@ const sections = [
 export default function ShippingReturns() {
   return (
     <div className="bg-aurora">
+      <Seo
+        title="Shipping & Returns — Island-Wide Delivery | KANYÃ Sri Lanka"
+        description="KANYÃ ships island-wide across Sri Lanka in 2–5 business days, with free shipping over LKR 10,000 and a 6-month warranty on every piece."
+        path="/shipping-returns"
+      />
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-10">
         <motion.p initial="hidden" animate="show" variants={fadeUp} className="text-center text-xs uppercase tracking-[0.2em] text-gold">
           Good to Know

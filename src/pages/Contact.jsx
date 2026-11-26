@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone } from "lucide-react";
 import { store } from "../config";
+import Seo from "../components/Seo";
 
 const inputClass =
   "w-full rounded-lg border border-ink/16 bg-panel px-4 py-3 text-sm text-pearl placeholder:text-mist/50 outline-none focus:border-gold";
@@ -28,6 +29,11 @@ export default function Contact() {
 
   return (
     <div className="bg-aurora min-h-screen">
+      <Seo
+        title="Contact KANYÃ — Jewellery Orders & Support in Sri Lanka"
+        description="Get in touch with KANYÃ for order enquiries, sizing help or support. WhatsApp and email support for customers across Sri Lanka."
+        path="/contact"
+      />
       <div className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
         <p className="text-xs uppercase tracking-[0.2em] text-gold">Get in Touch</p>
         <h1 className="mt-3 font-display text-5xl text-pearl">Contact Us</h1>
