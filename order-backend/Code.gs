@@ -92,6 +92,86 @@ function appendOrderRow(order, status, slipUrl) {
   }
 }
 
+// Branded HTML version of the customer confirmation email, styled to match the KANYA order slip
+// (same colours as the site: dark ink header, cream rows, tan line borders).
+function customerEmailHtml(order, paid) {
+  const c = order.customer;
+  const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const rows = order.items.map((i) =>
+    '<tr>' +
+    '<td style="padding:10px 12px;border:1px solid #ded0b4;color:#2f4237;">' + esc(i.name) + (i.variantTitle ? '<br><span style="color:#87806f;font-size:12px;">' + esc(i.variantTitle) + '</span>' : '') + '</td>' +
+    '<td style="padding:10px 12px;border:1px solid #ded0b4;color:#2f4237;text-align:center;">' + esc(i.qty) + '</td>' +
+    '<td style="padding:10px 12px;border:1px solid #ded0b4;color:#2f4237;text-align:right;">Rs. ' + Number(i.unitPrice).toLocaleString('en-LK') + '</td>' +
+    '<td style="padding:10px 12px;border:1px solid #ded0b4;color:#2f4237;text-align:right;">Rs. ' + (Number(i.unitPrice) * Number(i.qty)).toLocaleString('en-LK') + '</td>' +
+    '</tr>'
+  ).join('');
+
+  return (
+    '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#faf6ee;">' +
+      '<div style="background:#2f4237;padding:28px 24px;text-align:center;">' +
+        '<p style="margin:0;color:#ffffff;font-size:22px;letter-spacing:4px;font-family:Georgia,serif;">K A N Y Ã</p>' +
+        '<p style="margin:6px 0 0;color:#e9ddc3;font-size:11px;letter-spacing:2px;text-transform:uppercase;">Fine Jewellery</p>' +
+      '</div>' +
+      '<div style="padding:28px 24px;">' +
+        '<p style="color:#2f4237;font-size:16px;margin:0 0 4px;">Hi ' + esc(c.name) + ',</p>' +
+        '<p style="color:#87806f;font-size:14px;margin:0 0 20px;">' +
+          (paid ? 'Payment received — thank you! ' : 'Thank you for your order. ') +
+          'Here is a copy of your order confirmation. We will confirm delivery with you on WhatsApp shortly.' +
+        '</p>' +
+
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">' +
+          '<tr>' +
+            '<td style="background:#e9ddc3;border:1px solid #ded0b4;padding:8px 12px;font-size:12px;font-weight:bold;color:#2f4237;width:30%;">Order no.</td>' +
+            '<td style="background:#faf6ee;border:1px solid #ded0b4;padding:8px 12px;font-size:13px;color:#2f4237;">' + esc(order.orderNumber) + '</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="background:#e9ddc3;border:1px solid #ded0b4;padding:8px 12px;font-size:12px;font-weight:bold;color:#2f4237;">Payment</td>' +
+            '<td style="background:#faf6ee;border:1px solid #ded0b4;padding:8px 12px;font-size:13px;color:#2f4237;">' + esc(order.payment) + (paid ? ' (Paid)' : '') + '</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="background:#e9ddc3;border:1px solid #ded0b4;padding:8px 12px;font-size:12px;font-weight:bold;color:#2f4237;">Delivery to</td>' +
+            '<td style="background:#faf6ee;border:1px solid #ded0b4;padding:8px 12px;font-size:13px;color:#2f4237;">' + esc(c.address) + ', ' + esc(c.city) + ' ' + esc(c.postalCode || '') + '</td>' +
+          '</tr>' +
+        '</table>' +
+
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:16px;">' +
+          '<tr style="background:#2f4237;">' +
+            '<th style="padding:10px 12px;color:#fff;font-size:12px;text-align:left;border:1px solid #ded0b4;">Product</th>' +
+            '<th style="padding:10px 12px;color:#fff;font-size:12px;text-align:center;border:1px solid #ded0b4;">Qty</th>' +
+            '<th style="padding:10px 12px;color:#fff;font-size:12px;text-align:right;border:1px solid #ded0b4;">Unit price</th>' +
+            '<th style="padding:10px 12px;color:#fff;font-size:12px;text-align:right;border:1px solid #ded0b4;">Line total</th>' +
+          '</tr>' +
+          rows +
+        '</table>' +
+
+        '<table style="width:100%;border-collapse:collapse;margin-bottom:24px;">' +
+          '<tr>' +
+            '<td style="padding:4px 12px;color:#87806f;font-size:13px;text-align:right;">Subtotal</td>' +
+            '<td style="padding:4px 12px;color:#2f4237;font-size:13px;text-align:right;width:140px;">Rs. ' + Number(order.subtotal).toLocaleString('en-LK') + '</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:4px 12px;color:#87806f;font-size:13px;text-align:right;">Shipping</td>' +
+            '<td style="padding:4px 12px;color:#2f4237;font-size:13px;text-align:right;">' + (Number(order.shipping) === 0 ? 'Free' : 'Rs. ' + Number(order.shipping).toLocaleString('en-LK')) + '</td>' +
+          '</tr>' +
+          '<tr>' +
+            '<td style="padding:8px 12px;color:#2f4237;font-size:15px;font-weight:bold;text-align:right;border-top:1px solid #ded0b4;">Total</td>' +
+            '<td style="padding:8px 12px;color:#2f4237;font-size:15px;font-weight:bold;text-align:right;border-top:1px solid #ded0b4;">Rs. ' + Number(order.total).toLocaleString('en-LK') + '</td>' +
+          '</tr>' +
+        '</table>' +
+
+        '<p style="color:#87806f;font-size:12px;line-height:1.6;margin:0;">' +
+          'Your order slip is attached as a PDF. See our ' +
+          '<a href="' + SITE_URL + '/shipping-returns" style="color:#2f4237;">shipping &amp; returns</a> and ' +
+          '<a href="' + SITE_URL + '/care-guide" style="color:#2f4237;">care guide</a> for everyday wear tips.' +
+        '</p>' +
+      '</div>' +
+      '<div style="background:#e9ddc3;padding:16px 24px;text-align:center;">' +
+        '<p style="margin:0;color:#2f4237;font-size:11px;letter-spacing:1px;">KANYÃ · ' + SITE_URL.replace('https://', '') + '</p>' +
+      '</div>' +
+    '</div>'
+  );
+}
+
 function sendOrderEmails(order, slip, paid) {
   const c = order.customer;
   const summary =
@@ -118,6 +198,7 @@ function sendOrderEmails(order, slip, paid) {
       subject: (paid ? 'Payment received for your KANYA order ' : 'We received your KANYA order ') + order.orderNumber,
       body: 'Hi ' + c.name + ',\n\nThank you for your order. This is what we received:\n\n' + summary +
         '\n\nYour order slip is attached as a PDF. We will confirm the delivery with you on WhatsApp shortly.\n\nKANYA',
+      htmlBody: customerEmailHtml(order, paid),
       attachments: customerAttachments,
     });
   }
