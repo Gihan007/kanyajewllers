@@ -195,6 +195,7 @@ function sendOrderEmails(order, slip, paid) {
   if (c.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c.email)) {
     MailApp.sendEmail({
       to: c.email,
+      name: 'KANYÃ Jewellers',
       subject: (paid ? 'Payment received for your KANYA order ' : 'We received your KANYA order ') + order.orderNumber,
       body: 'Hi ' + c.name + ',\n\nThank you for your order. This is what we received:\n\n' + summary +
         '\n\nYour order slip is attached as a PDF. We will confirm the delivery with you on WhatsApp shortly.\n\nKANYA',
